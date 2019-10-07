@@ -1,0 +1,10 @@
+{{!-- //APENAS USER TEM ACESSO --}}
+<p>Olá, {{user.username}}</p>
+{{#if isUser}}
+<a href="user/commit"><button>commit to us</button></a>
+{{/if}}
+
+{{!-- //APENAS ADM TEM ACESSO --}}
+{{#if isAdm}}
+<a href="adm/pull"><button>check pull</button></a>
+{{/if}}
