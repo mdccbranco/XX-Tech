@@ -1,7 +1,11 @@
 {{!-- //APENAS USER TEM ACESSO --}}
 <p>Olá, {{user.username}}</p>
 {{#if isUser}}
-<a href="user/commit"><button>commit to us</button></a>
+<a href="user/commit"><button>Commit to us</button></a>
+{{!-- <form action="/user/commits" method="post">
+  <input name='id' value='{{user._id}}' type='hidden'>
+  <button type='submit'>commit to us</button>
+</form> --}}
 {{/if}}
 
 {{!-- //APENAS ADM TEM ACESSO --}}

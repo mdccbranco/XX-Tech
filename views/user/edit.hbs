@@ -1,0 +1,10 @@
+<h2>EDIT COMMIT</h2>
+<form action="/user/{{commit._id}}" method="post">
+  <label for="">Url: </label>
+  <input type="text" name="url" value="{{commit.url}}">
+
+  <label for="">Description:</label>
+  <input type="text" name="description" value="{{commit.description}}">
+
+  <button type="submit">EDIT</button>
+</form>

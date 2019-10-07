@@ -1,0 +1,33 @@
+<a href="/profile"> <button>My profile</button></a>
+
+<h5>ADD NEW COMMIT</h5>
+<form action="/user/commit" method="post">
+
+
+  <input type='checkbox' name='anonymous'> postar como anonimo
+
+  <input name='owner' value='{{user._id}}' type='hidden'>
+
+  <label for="">url:</label>
+  <input type="text" name="url">
+
+  <label for="">Description:</label>
+  <input type="text" name="description">
+
+  <button type="submit">ADD</button>
+</form>
+
+<br>
+<hr>
+
+{{#each arrCommit}}
+<div>
+  <p> {{this.url}} | {{this.description}} </p>
+</div>
+<form action="/user/{{this.id}}/delete" method="post">
+  <button type="submit">delete</button>
+</form>
+<a href="/user/{{this.id}}/edit">
+  <button type="submit">edit</button>
+</a>
+{{/each}}

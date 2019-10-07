@@ -5,7 +5,8 @@ const commitSchema = new Schema(
   {
     url: String,
     description: String,
-    owner: {type: Schema.Types.ObjectId, ref: 'User'}
+    owner: {type: Schema.Types.ObjectId, ref: 'User'},
+    anonymous: String
   },
   {
     timestamps: true
