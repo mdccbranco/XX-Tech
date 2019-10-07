@@ -13,9 +13,4 @@ profileRouter.get('/', ensureLogin.ensureLoggedIn('/profile'), (req, res) => {
   }
 });
 
-// profileRouter.get('/', (req, res) => {
-//   console.log('oiooioi');
-//   res.render('profile/profile');
-// });
-
 module.exports = profileRouter;

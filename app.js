@@ -45,11 +45,13 @@ app.use(
 );
 app.use(cookieParser());
 
-app.use(session({
-  secret: "woman",
-  resave: true,
-  saveUninitialized: true
-}));
+app.use(
+  session({
+    secret: 'woman',
+    resave: true,
+    saveUninitialized: true
+  })
+);
 
 // Express View engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -112,11 +114,11 @@ app.use(passport.session());
 const index = require('./routes/index');
 const authRouter = require('./routes/authRouter');
 const profileRouter = require('./routes/profileRouter');
-// const userRouter = require('./routes/userRouter');
+const userRouter = require('./routes/userRouter');
 
 app.use('/', index);
 app.use('/', authRouter);
 app.use('/profile', profileRouter);
-// app.use('/user', userRouter);
+app.use('/user', userRouter);
 
 module.exports = app;
