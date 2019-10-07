@@ -45,6 +45,12 @@ app.use(
 );
 app.use(cookieParser());
 
+app.use(session({
+  secret: "woman",
+  resave: true,
+  saveUninitialized: true
+}));
+
 // Express View engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
