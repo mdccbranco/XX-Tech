@@ -115,10 +115,12 @@ const index = require('./routes/index');
 const authRouter = require('./routes/authRouter');
 const profileRouter = require('./routes/profileRouter');
 const userRouter = require('./routes/userRouter');
+const admRouter = require('./routes/admRouter');
 
 app.use('/', index);
 app.use('/', authRouter);
 app.use('/profile', profileRouter);
 app.use('/user', userRouter);
+app.use('/adm', admRouter);
 
 module.exports = app;
