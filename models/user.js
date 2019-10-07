@@ -5,7 +5,9 @@ const userSchema = new Schema(
   {
     username: String,
     role: {type: String, enum: ['user', 'adm'], default: 'user'},
-    password: String
+    email: String,
+    password: String,
+    githubID: String
   },
   {
     timestamps: true
