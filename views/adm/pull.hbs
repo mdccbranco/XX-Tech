@@ -1,0 +1,32 @@
+<a href="/profile"> <button>My profile</button></a>
+
+<h5>ADD NEW COMMIT</h5>
+<form action="/adm/commit" method="post">
+
+
+  <label for="">url:</label>
+  <input type="text" name="url">
+
+  <label for="">Description:</label>
+  <input type="text" name="description">
+
+  <button type="submit">ADD</button>
+</form>
+
+<br>
+<hr>
+
+<h5>PENDING</h5>
+{{#each arrCommit}}
+{{#unless this.post}}
+<div>
+  <p> {{this.owner.username}} | {{this.url}} | {{this.description}} </p>
+</div>
+<form action="/adm/{{this.id}}/delete" method="post">
+  <button type="submit">delete</button>
+</form>
+<a href="/adm/{{this.id}}/edit">
+  <button type="submit">edit</button>
+</a>
+{{/unless}}
+{{/each}}
