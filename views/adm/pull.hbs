@@ -2,7 +2,7 @@
 
 <h5>ADD NEW COMMIT</h5>
 <form action="/adm/commit" method="post">
-
+  <input name='owner' value='{{user._id}}' type='hidden'>
 
   <label for="">url:</label>
   <input type="text" name="url">

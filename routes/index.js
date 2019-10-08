@@ -10,7 +10,7 @@ router.get('/', (req, res, next) => {
 
 router.get('/yes-she-can', (req, res, next) => {
   Commit.find({post: true})
-  .populate('owner')
+    .populate('owner')
     .then(commit => {
       res.render('home/yes', {commit});
     })
