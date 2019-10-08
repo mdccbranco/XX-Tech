@@ -1,9 +1,8 @@
 <div class="logger">
   {{!-- //APENAS USER TEM ACESSO --}}
-  {{#if user}}
+   {{#if user}}
   Olá, {{user.username}}
   {{/if}}
-
   {{#if isUser}}
   <a href="user/commit"><button>Commit to us</button></a>
   {{/if}}
@@ -13,7 +12,6 @@
   <a href="adm/pull"><button>check pull</button></a>
   {{/if}}
 </div>
-
 
 <div class="container-ysc">
 {{#each commit}}
