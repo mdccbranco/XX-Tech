@@ -1,10 +1,19 @@
 const express = require('express');
-const router  = express.Router();
+const Commit = require('../models/commit');
+
+const router = express.Router();
 
 /* GET home page */
 router.get('/', (req, res, next) => {
   res.render('index');
 });
 
+router.get('/yes-she-can', (req, res, next) => {
+  Commit.find({post: true})
+    .then(commit => {
+      res.render('home/yes', {commit});
+    })
+    .catch(error => console.log(error));
+});
 
 module.exports = router;

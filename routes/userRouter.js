@@ -14,11 +14,11 @@ function checkRoles(role) {
 }
 
 userRouter.get('/commit', checkRoles('user'), (req, res, next) => {
-  Commit.find()
+  const {id} = req.user;
+  Commit.find({$and: [{owner: id}, {post: false}]})
     .populate('owner')
     .then(arrCommit => {
-      console.log(arrCommit);
-      res.render('user/commit', {arrCommit: arrCommit, user: req.user});
+      res.render('user/commit', {arrCommit, user: req.user});
     })
     .catch(err => console.log(`error: ${err}`));
 });

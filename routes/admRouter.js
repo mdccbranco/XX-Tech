@@ -18,7 +18,7 @@ admRouter.get('/pull', checkRoles('adm'), (req, res, next) => {
   Commit.find()
     .populate('owner')
     .then(arrCommit => {
-      res.render('adm/pull', {arrCommit: arrCommit, user: req.user});
+      res.render('adm/pull', {arrCommit, user: req.user});
     })
     .catch(err => console.log(`error: ${err}`));
 });
@@ -65,6 +65,25 @@ admRouter.post('/:id',  (req, res, next) => {
     .catch(error => {
       console.log('Error in edit: ', error);
     });
+});
+
+admRouter.get('/:id/post', (req, res, next) => {
+  Commit.findById(req.params.id)
+    .then(commit => {
+      res.render('adm/post', {commit});
+    })
+    .catch(error => {
+      console.log('Error in edit: ', error);
+    });
+});
+
+admRouter.post('/:id/post', (req, res, next) => {
+  const {url, description} = req.body;
+  Commit.updateOne({_id: req.params.id}, {url, description, post: true})
+    .then(() => {
+      res.redirect('/yes-she-can');
+    })
+    .catch(error => console.log(error));
 });
 
 admRouter.get('/logout', (req, res) => {
