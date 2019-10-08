@@ -1,0 +1,16 @@
+<section class="container-ysc">
+
+  <div class="col-sm-3 card-ysc">
+    <a href="{{this.url}}">
+      <img class="card-img-top img-ysc" src="{{this.imgPath}}" alt=""></a>
+    <div class="card-body">
+      <p class="card-text">{{this.description}}</p>
+      {{#if this.anonymous}}
+      <p> postado por Anonimo</p>
+      {{else}}
+      <p> postado por {{this.owner.role}}</p>
+      {{/if}}
+    </div>
+  </div>
+
+  </div>
