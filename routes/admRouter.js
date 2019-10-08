@@ -86,7 +86,7 @@ admRouter.post('/:id/post', uploadCloud.single('photo'), (req, res, next) => {
     .then(() => {
       Commit.find()
       .populate('owner')
-      .then( => {
+      .then( () => {
         res.redirect('/yes-she-can');
       })
       .catch(err => console.log(`error: ${err}`));
