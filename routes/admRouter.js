@@ -24,11 +24,13 @@ admRouter.get('/pull', checkRoles('adm'), (req, res, next) => {
 });
 
 admRouter.post('/commit', checkRoles('adm'), (req, res, next) => {
-  const {url, description, owner, anonymous} = req.body;
-  const addCommit = new Commit({url, description, owner, anonymous});
+  console.log('req',req.body);
+  const {url, category, description, owner, anonymous} = req.body;
+  const addCommit = new Commit({url, category, description, owner, anonymous});
   addCommit
     .save()
-    .then(() => {
+    .then((data) => {
+      console.log('data',data);
       res.redirect('/adm/pull');
     })
     .catch(error => {
@@ -79,10 +81,10 @@ admRouter.get('/:id/post', (req, res, next) => {
 });
 
 admRouter.post('/:id/post', uploadCloud.single('photo'), (req, res, next) => {
-  const {url, description} = req.body;
+  const {url, description, category} = req.body;
   const imgPath = req.file.url;
   const imgName = req.file.originalname;
-  Commit.updateOne({_id: req.params.id}, {url, description, post: true, imgPath,imgName})
+  Commit.updateOne({_id: req.params.id}, {url, description, post: true, imgPath,imgName, category})
     .then(() => {
       Commit.find()
       .populate('owner')
