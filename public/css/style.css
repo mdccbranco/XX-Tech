@@ -31,8 +31,28 @@
   font-weight: 400;
 }
 
-#navbarTogglerDemo02 {
+/* #navbarTogglerDemo02 {
   width: 50%;
+} */
+
+.navbarInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.infos {
+  display: flex;
+  align-items: center;
+}
+
+
+.auth {
+  color: #b88cff;
+  padding: none;
+  font-weight: bold;
 }
 
 .MainContainer {
@@ -42,6 +62,7 @@
   overflow-x: hidden;
   overflow-y: scroll;
 }
+
 
 .ParallaxContainer {
   display: flex;
@@ -57,7 +78,7 @@
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-origin: content-box;
-  background-color: violet;
+  background-color: #F49B96;
   color: white;
 }
 
@@ -66,7 +87,27 @@
   width: 50%;
   margin: 5% 25%;
   text-align: center;
-  text-shadow: 2px 2px gray;
+  text-shadow: 1.5px 1px gray;
+  font-style: italic;
+}
+
+.btnB {
+  background-color: transparent;
+  border-radius: 0.6em;
+  padding: 0.5em 1.5em;
+}
+
+.btn_style {
+  border-color: #F49B96;
+  color: #fff;
+  box-shadow: 0 0 20px 20px #F49B96 inset, 0 0 0 0 #F49B96;
+  transition: all 150ms ease-in-out;
+  background: #F49B96;
+
+}
+
+.btn_style:hover {
+  box-shadow: 0 0 10px 0 #F49B96 inset, 0 0 10px 4px #F49B96;
 }
 
 /* h1 {
@@ -87,13 +128,39 @@
   overflow-y: scroll;
 }
 
-.ContentContainer {
+.ContentContainer-inspirations {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  background-color: #F0DCD7;
+  z-index: 1;
+  padding: 75px;
+  height: 70vh;
+}
+
+.Content-inspirations {
+  display: flex;
+  flex-direction: row;
+}
+
+.ContentContainer-linking {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #8898B8;
+  z-index: 1;
+  padding: 75px;
+  height: 70vh;
+}
+
+.ContentContainer-yesSheCan {
   position: relative;
   display: block;
   background-color: white;
   z-index: 1;
   padding: 75px;
-  border-bottom: 5px solid violet;
+  height: 70vh;
 }
 
 /* .Content {
@@ -105,32 +172,36 @@
   margin: 75px 0;
 } */
 
-.icon-img > img{
-  width: 70%;
+.icon-img>img {
+  width: 60%;
   margin-left: 15%;
-  border: 5px solid violet;
+  border: 5px solid #76B5B0;
   border-radius: 40%;
   margin-bottom: 15%;
+  background-color: white;
 }
 
-.icon-text > p{
- text-align: center;
+.icon-text>p {
+  text-align: center;
 }
 
-h2{
+h2 {
   margin-top: -50px;
   text-align: center;
   margin-bottom: 50px;
 }
 
-footer{
-    height: 200px;
-    /* position: fixed; */
-    /* bottom: 0; */
-    background-color: violet;
+footer {
+  height: 80px;
+  background-color: #f8f9fa;
+  color: #4E567D;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.card{
+.card {
   margin: 2%;
 }
 
