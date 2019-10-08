@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 const commitSchema = new Schema(
   {
+    title: String,
     url: String,
     description: String,
     owner: {type: Schema.Types.ObjectId, ref: 'User'},
