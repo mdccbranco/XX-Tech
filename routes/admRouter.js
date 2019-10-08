@@ -3,6 +3,7 @@ const admRouter = express.Router();
 const passport = require('passport');
 const User = require('../models/user');
 const Commit = require('../models/commit');
+const uploadCloud = require('../middleware/cloudinary');
 
 function checkRoles(role) {
   return function(req, res, next) {
@@ -55,7 +56,7 @@ admRouter.get('/:id/edit', (req, res, next) => {
     });
 });
 
-admRouter.post('/:id', (req, res, next) => {
+admRouter.post('/:id',  (req, res, next) => {
   const {url, description} = req.body;
   Commit.updateOne({_id: req.params.id}, {url, description})
     .then(() => {
