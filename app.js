@@ -16,7 +16,7 @@ const User = require('./models/user');
 const flash = require('connect-flash');
 
 mongoose
-  .connect('mongodb://localhost/xxTech', {
+  .connect(process.env.MONGODB_URI, {
     useNewUrlParser: true
   })
   .then(x => {
@@ -47,7 +47,8 @@ app.use(cookieParser());
 
 app.use(
   session({
-    secret: 'woman',
+    secret: 'woman', 
+    cookie: { maxAge: 300000 },
     resave: true,
     saveUninitialized: true
   })

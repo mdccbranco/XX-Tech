@@ -270,3 +270,18 @@ footer {
 .card {
   margin: 2%;
 }
+
+.container-ysc{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10%;
+}
+
+.img-ysc{
+    width: 150px;
+}
+
+.card-ysc{
+    border: 2px solid black;
+    margin: 2%;
+}

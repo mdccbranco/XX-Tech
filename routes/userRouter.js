@@ -28,7 +28,7 @@ userRouter.post('/commit', checkRoles('user'), (req, res, next) => {
   const addCommit = new Commit({url, description, owner, anonymous});
   addCommit
     .save()
-    .then(() => {
+    .then((data) => {
       res.redirect('/user/commit');
     })
     .catch(error => {
