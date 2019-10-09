@@ -300,21 +300,35 @@ footer {
   text-decoration: none;
 }
 
+.card-text {
+  color: #4f567d;
+}
+
+.card-text-post {
+  color: #b88cff;
+  display: flex;
+  justify-content: flex-end;
+}
 
 
 .img-ysc {
-  width: 150px;
+  width: 100%;
+  border: 0.5px solid #76B5B0;
+  border-radius: 8%;
+
 }
 
 .card-ysc {
-  border: 2px solid black;
+  border: 1px solid #76B5B0;
+  border-radius: 10%;
   margin: 2%;
-  background-color: white;
+  background-color: #f8f9fa;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 33%;
-  padding: 30px 0px;
+  width: 20%;
+  height: 350px;
+  padding: 20px 20px 5px 20px;
 }
 
 .container-ysc {
@@ -324,12 +338,11 @@ footer {
   flex-wrap: wrap;
   background-color: #F0DCD7;
   min-height: 100vh;
-
 }
 
-.card-body {
-  border: 1px solid black;
-
+.teste {
+  display: flex;
+  justify-content: center;
 }
 
 .logger {
@@ -351,4 +364,26 @@ footer {
 .btnAuth:hover {
   text-decoration: none;
   color: #76B5B0;
+}
+
+.about-us {
+  background-color:
+    #e9dcfd;
+  display: block;
+  z-index: 1;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-info {
+  background-color: rgba(255, 255, 255, 0.20);
+  height: 70vh;
+  width: 80vw;
+  border-radius: 100px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
 }
