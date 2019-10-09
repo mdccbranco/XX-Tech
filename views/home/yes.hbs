@@ -1,20 +1,32 @@
-<div class="logger">
-  {{!-- //APENAS USER TEM ACESSO --}}
-  {{#if user}}
-  Olá, {{user.username}}
-  {{/if}}
 
-  {{#if isUser}}
-  <a href="user/commit" class="btnAuth">Commit to us</button></a>
-  {{/if}}
+{{#if isAdm}}
+<div class="container-ysc">
+  {{#each commit}}
+  <div>
+    <form action="/adm/{{this.id}}/delete" method="post">
+      <button type="submit"><img src='/images/delete-button.png' width="20px"></button>
+    </form>
+    <form action="/adm/{{this.id}}/edit" method="get">
+      <button type="submit"><img src='/images/pencil.png' width="20px"></button>
+    </form>
+  </div>
+  <div class="col-sm-3 card-ysc">
+    <a href="{{this.url}}">
+      <img class="card-img-top img-ysc" src="{{this.imgPath}}" alt=""></a>
+    <div class="card-body">
+      <p class="card-text">{{this.description}}</p>
+      {{#if this.anonymous}}
+      <p> postado por Anonimo</p>
+      {{else}}
+      <p> postado por {{this.owner.username}}</p>
+      {{/if}}
+    </div>
+  </div>
 
-  {{!-- //APENAS ADM TEM ACESSO --}}
-  {{#if isAdm}}
-  <a href="adm/pull" class="btnAuth">Check pull</button></a>
-  {{/if}}
+  {{/each}}
 </div>
 
-
+{{else}}
 <div class="container-ysc">
   {{#each commit}}
   <div class="col-sm-3 card-ysc">
@@ -31,3 +43,4 @@
   </div>
   {{/each}}
 </div>
+{{/if}}

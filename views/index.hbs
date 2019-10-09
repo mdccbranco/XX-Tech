@@ -1,20 +1,3 @@
-<div class="logger">
-  {{!-- //APENAS USER TEM ACESSO --}}
-  {{#if user}}
-  Olá, {{user.username}}
-  {{/if}}
-
-  {{#if isUser}}
-  <a href="user/commit" class="btnAuth">Commit to us</a>
-  {{/if}}
-
-  {{!-- //APENAS ADM TEM ACESSO --}}
-  {{#if isAdm}}
-  <a href="adm/pull" class="btnAuth">Check pull</button></a>
-  {{/if}}
-</div>
-
-
 <section class="MainContainer">
   <div class='containerParalax'>
     <div class="ParallaxContainer"></div>
