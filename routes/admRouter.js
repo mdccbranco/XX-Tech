@@ -3,6 +3,7 @@ const admRouter = express.Router();
 const passport = require('passport');
 const User = require('../models/user');
 const Commit = require('../models/commit');
+const Linking = require('../models/linking');
 const uploadCloud = require('../middleware/cloudinary');
 
 function checkRoles(role) {
@@ -24,18 +25,36 @@ admRouter.get('/pull', checkRoles('adm'), (req, res, next) => {
 });
 
 admRouter.post('/commit', checkRoles('adm'), (req, res, next) => {
-  console.log('req', req.body);
-  const {url, category, description, owner, anonymous} = req.body;
-  const addCommit = new Commit({url, category, description, owner, anonymous});
-  addCommit
-    .save()
-    .then(data => {
-      console.log('data', data);
-      res.redirect('/adm/pull');
-    })
-    .catch(error => {
-      console.log(error);
-    });
+  console.log('req',req.body);
+  let location = {
+    type: 'Point',
+    coordinates: [req.body.longitude, req.body.latitude]
+    };
+  if(req.body.category === 'linking'){
+    const {title, url, category, description, owner, anonymous, date, address, location} = req.body;
+    const addEvent = new Linking({title, url, category, description, owner, anonymous, date, address, location});
+    addEvent
+      .save()
+      .then((data) => {
+        console.log('data',data);
+        res.redirect('/adm/pull');
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  } else {
+    const {url, category, description, owner, anonymous} = req.body;
+    const addCommit = new Commit({url, category, description, owner, anonymous});
+    addCommit
+      .save()
+      .then((data) => {
+        res.redirect('/adm/pull');
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+
 });
 
 admRouter.post('/:id/delete', checkRoles('adm'), (req, res, next) => {
