@@ -228,7 +228,7 @@
 .icon-img-gif>img {
   width: 70%;
   margin-left: 15%;
-  border: 5px solid #b88cff;
+  border: 5px solid white;
   border-radius: 30%;
   margin-bottom: 32px;
   background-color: white;
@@ -236,7 +236,7 @@
 
 .ContentContainer-girl-in-formation {
   display: block;
-  background-color: #F0DCD7;
+  background-color: #a65279;
   z-index: 1;
   padding: 75px;
   min-height: 80vh;
@@ -244,7 +244,7 @@
 }
 
 .textGif {
-  color: #4f567d;
+  color: #f8f9fa;
   padding-bottom: 50px;
   padding-top: 20px;
 }
@@ -300,21 +300,46 @@ footer {
   text-decoration: none;
 }
 
+.card-text {
+  color: white;
+  text-align: center;
+}
 
+.card-text-post {
+  color: #08467e;
+  padding: 0px 10px;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+}
+
+.card-postado {
+  display: flex;
+  align-self: flex-end;
+  justify-content: flex-end;
+}
 
 .img-ysc {
-  width: 150px;
+  width: 100%;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
 }
 
 .card-ysc {
-  border: 2px solid black;
+  border: 1px solid white;
+  border-radius: 10px;
   margin: 2%;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.20);
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 33%;
-  padding: 30px 0px;
+  width: 20%;
+  height: 350px;
+  padding: 0px !important;
 }
 
 .container-ysc {
@@ -322,14 +347,37 @@ footer {
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
-  background-color: #F0DCD7;
+  background-color: #355a7b;
   min-height: 100vh;
-
 }
 
-.card-body {
-  border: 1px solid black;
+.container-bits {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #a65279;
+  min-height: 100vh;
+}
 
+.icon-del {
+  background-color: rgba(255, 255, 255, 0.20);
+  border-color: rgba(255, 255, 255, 0.50);
+  border-top-right-radius: 10px;
+  padding: 2px;
+}
+
+.icon-edit {
+  background-color: rgba(255, 255, 255, 0.20);
+  border-color: rgba(255, 255, 255, 0.50);
+  border-bottom-right-radius: 10px;
+  padding: 2px;
+}
+
+
+.container-ysc-commit {
+  margin-top: 40px;
+  margin-left: -30px;
 }
 
 .logger {
@@ -351,4 +399,26 @@ footer {
 .btnAuth:hover {
   text-decoration: none;
   color: #76B5B0;
+}
+
+.about-us {
+  background-color:
+    #e9dcfd;
+  display: block;
+  z-index: 1;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-info {
+  background-color: rgba(255, 255, 255, 0.20);
+  height: 70vh;
+  width: 80vw;
+  border-radius: 100px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
 }
