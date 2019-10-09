@@ -1,49 +1,55 @@
-<section class="teste">
-  <div class="container-ysc">
-    {{#if isAdm}}
-    {{#each commit}}
-    <div class="col-sm-3 card-ysc">
-      <a href="{{this.url}}">
-        <img class="img-ysc" src="{{this.imgPath}}" alt=""></a>
-      <div class="card-body">
-        <h6 class="card-text">{{this.description}}</h6>
-        {{#if this.anonymous}}
+<div class="container-ysc">
+  {{#if isAdm}}
+  {{#each commit}}
+  <div class="col-sm-3 card-ysc">
+    <a href="{{this.url}}">
+      <img class="img-ysc" src="{{this.imgPath}}" alt=""></a>
+    <div class="card-body">
+      <h6 class="card-text">{{this.description}}</h6>
+      {{#if this.anonymous}}
+      <div class="card-postado">
         <p class="card-text-post"> postado por Anonimo</p>
-        {{else}}
-        <p class="card-text-post"> postado por {{this.owner.username}}</p>
-        {{/if}}
       </div>
+      {{else}}
+      <div class="card-postado">
+        <p class="card-text-post"> postado por {{this.owner.username}}</p>
+      </div>
+      {{/if}}
     </div>
-    <div class="container-ysc-commit">
-      <form action="/adm/{{this.id}}/delete" method="post">
-        <button type="submit"><img src='/images/delete-button.png' width="20px"></button>
-      </form>
-      <form action="/adm/{{this.id}}/edit" method="get">
-        <button type="submit"><img src='/images/pencil.png' width="20px"></button>
-      </form>
-    </div>
-    {{/each}}
   </div>
-</section>
+  <div class="container-ysc-commit">
+    <form action="/adm/{{this.id}}/delete" method="post">
+      <button class='icon-del' type="submit"><img src='/images/delete-button.png' width="20px"></button>
+    </form>
+    <form action="/adm/{{this.id}}/edit" method="get">
+      <button class='icon-edit' type="submit"><img src='/images/pencil.png' width="20px"></button>
+    </form>
+  </div>
+  {{/each}}
+</div>
+
 
 {{else}}
 
-<section class="teste">
-  <div class="container-ysc">
-    {{#each commit}}
-    <div class="col-sm-3 card-ysc">
-      <a href="{{this.url}}">
-        <img class="card-img-top img-ysc" src="{{this.imgPath}}" alt=""></a>
-      <div class="card-body">
-        <h6 class="card-text">{{this.description}}</h6>
-        {{#if this.anonymous}}
+
+<div class="container-ysc">
+  {{#each commit}}
+  <div class="col-sm-3 card-ysc">
+    <a href="{{this.url}}">
+      <img class="card-img-top img-ysc" src="{{this.imgPath}}" alt=""></a>
+    <div class="card-body">
+      <h6 class="card-text">{{this.description}}</h6>
+      {{#if this.anonymous}}
+      <div class="card-postado">
         <p class="card-text-post"> postado por Anonimo</p>
-        {{else}}
-        <p class="card-text-post"> postado por {{this.owner.username}}</p>
-        {{/if}}
       </div>
+      {{else}}
+      <div class="card-postado">
+        <p class="card-text-post"> postado por {{this.owner.username}}</p>
+      </div>
+      {{/if}}
     </div>
-    {{/each}}
   </div>
-  {{/if}}
-</section>
+  {{/each}}
+</div>
+{{/if}}
