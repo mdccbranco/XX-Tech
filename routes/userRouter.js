@@ -69,7 +69,7 @@ userRouter.post('/:id', (req, res, next) => {
 
 userRouter.get('/logout', (req, res) => {
   req.logout();
-  res.redirect('/login');
+  res.redirect('/');
 });
 
 module.exports = userRouter;
