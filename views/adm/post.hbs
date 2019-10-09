@@ -1,4 +1,4 @@
-<h5>EDIT COMMIT</h5>
+<h5>POST COMMIT</h5>
 <form action="/adm/{{commit._id}}/post" method="post" enctype="multipart/form-data">
   <label for="">Url: </label>
   <input type="text" name="url" value="{{commit.url}}">
@@ -6,13 +6,23 @@
   <br>
   <input type='radio' name='category' value='yes' checked>Yes, she can!
   <input type='radio' name='category' value='bits'> Inspiration Bits
-  <input type='radio' name='category' value='linking'> Linking Women
+  {{!-- <input type='radio' name='category' value='linking'> Linking Women --}}
 
   <label for="">Description:</label>
   <input type="text" name="description" value="{{commit.description}}">
 
-  <label>Image:</label>
-  <input type="file" name="photo">
+  Mudar a foto: 
+  <input type='radio' name='changePhoto' value='no' checked> Não
+  <input type='radio' name='changePhoto' value='yes'> Sim
 
-  <button type="submit">POST yes, she can</button>
+  Imagem atual: <img src="{{commit.imgPath}}" width="100px">
+  <br>
+
+  <div id="get-img" hidden>
+    <label>Imagem :</label>
+    <input type="file" name="photo">
+  </div>
+
+
+  <button type="submit">POST</button>
 </form>
