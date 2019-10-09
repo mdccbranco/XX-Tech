@@ -1,17 +1,33 @@
-<h5>EDIT COMMIT</h5>
-<form action="/adm/{{commit._id}}" method="post" enctype="multipart/form-data">
-  <label for="">Url: </label>
+{{!-- <h5>EDIT COMMIT</h5>
+<form action="/adm/{{commit._id}}/post" method="post" enctype="multipart/form-data">
+  Categoria do post:  {{commit.category}}
+  <br><br>
+  <label for="">Url da notícia: </label>
   <input type="text" name="url" value="{{commit.url}}">
-  Category - {{commit.category}}
-  <br>
+  <br><br>
   <input type='radio' name='category' value='yes' checked>Yes, she can!
   <input type='radio' name='category' value='bits'> Inspiration Bits
-
+  {{!-- <input type='radio' name='category' value='linking'> Linking Women --}}
+  <br><br>
   <label for="">Description:</label>
   <input type="text" name="description" value="{{commit.description}}">
+  <br><br>
+  Mudar a foto:
+  <input type='radio' name='changePhoto' value='no' checked> Não
+  <input type='radio' name='changePhoto' value='yes'> Sim
+  <br><br>
+  <div id="show-img">
+  Imagem atual: <img src="{{commit.imgPath}}" width="100px">
+  <br>
+  </div>
 
-  <label>Poster:</label>
-  <input type="file" name="photo" value="{{commit.imgPath}}">
+  <div id="get-img" hidden>
+    <label>Imagem :</label>
+    <input type="file" name="photo">
+  </div>
 
-  <button type="submit">EDIT</button>
-</form>
+  <button type="submit"><img src="/images/checked.png" width="30px" alt="Postar"></button>
+  <a href="/adm/pull"> <img src="/images/cancel.png" width="30px" alt="Cancelar"></a>
+
+
+</form> --}}
