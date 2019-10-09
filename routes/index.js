@@ -14,11 +14,11 @@ router.get('/', (req, res, next) => {
       isUser = true;
     }
   }
-    res.render('index', {
-      user: req.user,
-      isAdm,
-      isUser
-    });
+  res.render('index', {
+    user: req.user,
+    isAdm,
+    isUser
+  });
 });
 
 router.get('/yes-she-can', (req, res, next) => {
@@ -32,11 +32,12 @@ router.get('/yes-she-can', (req, res, next) => {
     }
   }
   Commit.find({
-      post: true,
-      category: 'yes'
-    })
+    post: true,
+    category: 'yes'
+  })
     .populate('owner')
     .then(commit => {
+      console.log(commit);
       // res.send(commit);
       res.render('home/yes', {
         commit,
@@ -59,9 +60,9 @@ router.get('/inspiration-bits', (req, res, next) => {
     }
   }
   Commit.find({
-      post: true,
-      category: 'bits'
-    })
+    post: true,
+    category: 'bits'
+  })
     .populate('owner')
     .then(commit => {
       // res.send(commit);
@@ -74,7 +75,5 @@ router.get('/inspiration-bits', (req, res, next) => {
     })
     .catch(error => console.log(error));
 });
-
-
 
 module.exports = router;
