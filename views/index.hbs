@@ -5,27 +5,27 @@
   {{/if}}
 
   {{#if isUser}}
-  <a href="user/commit"><button>Commit to us</button></a>
+  <a href="user/commit" class="btnAuth">Commit to us</a>
   {{/if}}
 
   {{!-- //APENAS ADM TEM ACESSO --}}
   {{#if isAdm}}
-  <a href="adm/pull"><button>check pull</button></a>
+  <a href="adm/pull" class="btnAuth">Check pull</button></a>
   {{/if}}
 </div>
 
 
 <section class="MainContainer">
-  <div class="ParallaxContainer">
-    <div>
+  <div class='containerParalax'>
+    <div class="ParallaxContainer"></div>
+    <div class='inspirationText'>
       <h2 class="quote">
         “Devemos entender que culturalmente, nas áreas técnicas, bloqueamos mulheres e exaltamos homens, isso precisa
         ser mudado”
       </h2>
-    </div>
-    <div>
-
-      <a href="/inpiration-bits"><button class="btnB btn_style">Inspiration Bits</button></a>
+      <div>
+        <a href="/inpiration-bits"><button class="btnB btn_style">Inspiration Bits</button></a>
+      </div>
     </div>
   </div>
 
@@ -37,9 +37,15 @@
         </div>
         <div class="icon-text">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sapien est, cursus a pretium eget, rutrum ac
-            ipsum. Aliquam convallis nulla velit. Donec et ligula ex. Pellentesque condimentum velit eget mi tempus, sed
-            vehicula urna venenatis.
+            <strong>Lovelace (1815 – 1852)</strong> foi uma matemática e escritora inglesa considerada a primeira
+            programadora da história!
+
+            Ada foi a pessoa a escrever o primeiro algoritmo a ser reconhecido por
+            uma máquina. Esse algoritmo permitia à máquina computar os valores de funções matemáticas assim como
+            publicar uma coleção de notas sobre a máquina analítica.
+            <br>
+            <br>
+            <strong><span> <i>“Quanto mais eu estudo, mais insaciável eu sinto meu gênio ser.”</i></span></strong>
           </p>
         </div>
       </div>
@@ -50,9 +56,15 @@
         </div>
         <div class="icon-text">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sapien est, cursus a pretium eget, rutrum
-            ac ipsum. Aliquam convallis nulla velit. Donec et ligula ex. Pellentesque condimentum velit eget mi
-            tempus, sed vehicula urna venenatis.
+            <strong>Hopper (1906 – 1992) </strong>. Os feitos da contra-almirante contra-almirante, analista de sistemas
+            da marinha americana, revolucionaram a
+            computação por décadas. Seu trabalho foi pioneiro ao programar o primeiro computador digital de larga escala
+            e por criar o primeiro compilador. Um compilador é um programa de sistema que traduz um programa com
+            linguagem de alto nível para um equivalente em código de máquina para um processador. Foi esse último que
+            abriu caminho para a primeira linguagem de programação que não exigia um grande conhecimento matemático.
+            <br>
+            <br>
+            <strong><span><i>“A frase mais perigosa é: Nós sempre fizemos assim.”</i></span></strong>
           </p>
         </div>
       </div>
@@ -63,9 +75,16 @@
         </div>
         <div class="icon-text">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sapien est, cursus a pretium eget,
-            rutrum ac ipsum. Aliquam convallis nulla velit. Donec et ligula ex. Pellentesque condimentum velit
-            eget mi tempus, sed vehicula urna venenatis.
+            <strong> Marie Curie (1897 – 1934) </strong> brilhante cientista polonesa, se formou no ensino médio aos 15
+            anos, mas não foi admitida na faculdade pois nesta época não se aceitavam
+            mulheres, então, se mudou para Paris para estudar física em Sorbonne.
+
+            Nos estudos sobre radioatividade ela e seu marido, Pierre, descobriram os elementos rádio e polônio. Em 1903
+            dividiu o prêmio Nobel de Física com o marido. Em 1911 ganhou o prêmio Nobel de Química pela descoberta dos
+            elementos.
+            <br>
+            <br>
+            <strong><span><i>“Na vida não há nada a se temer, apenas a ser compreendido.”</i></span></strong>
           </p>
         </div>
       </div>
@@ -144,4 +163,11 @@
 
     </div>
   </div>
+</section>
+<section>
+  <footer width="100vw">
+    <p class="footer-email"><img src="/images/email.png" height="25px">contato.xxtech@gmail.com </p>
+    <div class="footer-devs"> Desenvolvido por <a class='devs' href="https://github.com/mdccbranco">Mônica</a> & <a
+        class='devs' href="https://github.com/grazidiandra">Grazi</a></div>
+  </footer>
 </section>

@@ -54,6 +54,7 @@ admRouter.post('/commit', checkRoles('adm'), (req, res, next) => {
         console.log(error);
       });
   }
+
 });
 
 admRouter.post('/:id/delete', checkRoles('adm'), (req, res, next) => {
@@ -76,7 +77,7 @@ admRouter.get('/:id/edit', (req, res, next) => {
     });
 });
 
-admRouter.post('/:id',  (req, res, next) => {
+admRouter.post('/:id', (req, res, next) => {
   const {url, description} = req.body;
   Commit.updateOne({_id: req.params.id}, {url, description})
     .then(() => {
@@ -99,17 +100,21 @@ admRouter.get('/:id/post', (req, res, next) => {
 });
 
 admRouter.post('/:id/post', uploadCloud.single('photo'), (req, res, next) => {
+  console.log('======>', req.body);
   const {url, description, category} = req.body;
   const imgPath = req.file.url;
   const imgName = req.file.originalname;
-  Commit.updateOne({_id: req.params.id}, {url, description, post: true, imgPath,imgName, category})
+  Commit.updateOne(
+    {_id: req.params.id},
+    {url, description, post: true, imgPath, imgName, category}
+  )
     .then(() => {
       Commit.find()
-      .populate('owner')
-      .then( () => {
-        res.redirect('/yes-she-can');
-      })
-      .catch(err => console.log(`error: ${err}`));
+        .populate('owner')
+        .then(() => {
+          res.redirect('/yes-she-can');
+        })
+        .catch(err => console.log(`error: ${err}`));
     })
     .catch(error => console.log(error));
 });
@@ -118,7 +123,5 @@ admRouter.get('/logout', (req, res) => {
   req.logout();
   res.redirect('/login');
 });
-
-
 
 module.exports = admRouter;
