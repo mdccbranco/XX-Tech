@@ -5,29 +5,29 @@
   {{/if}}
 
   {{#if isUser}}
-  <a href="user/commit"><button>Commit to us</button></a>
+  <a href="user/commit"><button class="btnAuth">Commit to us</button></a>
   {{/if}}
 
   {{!-- //APENAS ADM TEM ACESSO --}}
   {{#if isAdm}}
-  <a href="adm/pull"><button>check pull</button></a>
+  <a href="adm/pull"><button class="btnAuth">check pull</button></a>
   {{/if}}
 </div>
 
 
 <div class="container-ysc">
-{{#each commit}}
-<div class="col-sm-3 card-ysc">
-  <a href="{{this.url}}">
-    <img class="card-img-top img-ysc" src="{{this.imgPath}}" alt="" ></a>
-  <div class="card-body">
-    <p class="card-text">{{this.description}}</p>
-    {{#if this.anonymous}}
-    <p> postado por Anonimo</p>
-    {{else}}
-    <p> postado por {{this.owner.username}}</p>
-    {{/if}}
+  {{#each commit}}
+  <div class="col-sm-3 card-ysc">
+    <a href="{{this.url}}">
+      <img class="card-img-top img-ysc" src="{{this.imgPath}}" alt=""></a>
+    <div class="card-body">
+      <p class="card-text">{{this.description}}</p>
+      {{#if this.anonymous}}
+      <p> postado por Anonimo</p>
+      {{else}}
+      <p> postado por {{this.owner.username}}</p>
+      {{/if}}
+    </div>
   </div>
-</div>
-{{/each}}
+  {{/each}}
 </div>
