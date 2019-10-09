@@ -1,4 +1,4 @@
-<a href="/profile"> <button>My profile</button></a>
+{{!-- <a href="/profile"> <button>My profile</button></a> --}}
 
 <h5>ADD NEW COMMIT</h5>
 <form action="/adm/commit" method="post">
@@ -6,9 +6,9 @@
 
   <input type='radio' name='category' value='yes' checked>Yes, she can!
   <input type='radio' name='category' value='bits'> Inspiration Bits
-  <input type='radio' name='category' value='linking'> Linking Women
+  {{!-- <input type='radio' name='category' value='linking'> Linking Women --}}
 
-  <div id="link-info" hidden>
+  {{!-- <div id="link-info" hidden>
     <label for="">Title:</label>
     <input type="text" name="title">
 
@@ -20,7 +20,7 @@
     <label>Coordinates</label>
     <input type="text" name="latitude" placeholder="latitude">
     <input type="text" name="longitude" placeholder="longitude">
-  </div>
+  </div> --}}
 
   <label for="">url:</label>
   <input type="text" name="url">
@@ -38,17 +38,15 @@
 {{#each arrCommit}}
 {{#unless this.post}}
 <div>
-  <p> {{this.owner.username}} | {{this.url}} | {{this.description}} </p>
+  <p>  {{this.owner.username}} | {{this.url}} | {{this.description}} | {{this.category}} </p>
 </div>
 <form action="/adm/{{this.id}}/delete" method="post">
-  <button type="submit">delete</button>
+  <button type="submit"><img src="/images/delete-button.png" alt="Deletar" width="20px"></button>
 </form>
-<a href="/adm/{{this.id}}/edit">
-  <button type="submit">edit</button>
-</a>
 <a href="/adm/{{this.id}}/post">
-  <button type="submit">post</button>
+  <img src="/images/checked.png" alt="Postar" width="20px">
 </a>
+
 {{/unless}}
 {{/each}}
 
