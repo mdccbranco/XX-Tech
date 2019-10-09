@@ -153,30 +153,34 @@ admRouter.post('/:id/post', uploadCloud.single('photo'), (req, res, next) => {
     description,
     category
   } = req.body;
-  const imgPath = req.file.url;
-  const imgName = req.file.originalname;
-  Commit.updateOne({
-      _id: req.params.id
-    }, {
-      url,
-      description,
-      post: true,
-      imgPath,
-      imgName,
-      category
-    })
-    .then(() => {
-      Commit.find()
-        .populate('owner')
-        .then(() => {
-          res.redirect('/yes-she-can');
-        })
-        .catch(err => console.log(`error: ${err}`));
-    })
-    .catch(error => console.log(error));
+  if(req.body.changePhoto === 'yes'){
+    const imgPath = req.file.url;
+    const imgName = req.file.originalname;
+    Commit.updateOne({ _id: req.params.id }, { url, description, post: true, category, imgPath, imgName})
+      .then(() => {
+        Commit.find()
+          .populate('owner')
+          .then(() => {
+            res.redirect('/adm/pull');
+          })
+          .catch(err => console.log(`error: ${err}`));
+      })
+      .catch(error => console.log(error));
+  } else {
+    Commit.updateOne({ _id: req.params.id }, { url, description, post: true, category})
+      .then(() => {
+        Commit.find()
+          .populate('owner')
+          .then(() => {
+            res.redirect('/adm/pull');
+          })
+          .catch(err => console.log(`error: ${err}`));
+      })
+      .catch(error => console.log(error));
+  }
 });
 
-admRouter.get('/:id/post/edit', uploadCloud.single('photo'), (req, res, next) => {
+admRouter.get('/:id/post/edit', (req, res, next) => {
   Commit.updateOne({_id: req.params.id}, {post: false})
     .then(() => {
       res.redirect('/adm/pull');
