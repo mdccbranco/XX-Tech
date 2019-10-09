@@ -44,6 +44,10 @@ router.get('/', (req, res, next) => {
   .catch(error => console.log(error));
 });
 
+router.get('/about-us', (req, res, next) => {
+  res.render('about-us');
+});
+
 router.get('/yes-she-can', (req, res, next) => {
   let isAdm = false;
   let isUser = false;
