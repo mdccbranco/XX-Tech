@@ -1,5 +1,5 @@
 <h5>EDIT COMMIT</h5>
-<form action="/adm/{{commit._id}}" method="post">
+<form action="/adm/{{commit._id}}" method="post" enctype="multipart/form-data">
   <label for="">Url: </label>
   <input type="text" name="url" value="{{commit.url}}">
   Category - {{commit.category}}
@@ -11,7 +11,7 @@
   <input type="text" name="description" value="{{commit.description}}">
 
   <label>Poster:</label>
-  <input type="file" name="photo">
+  <input type="file" name="photo" value="{{commit.imgPath}}">
 
   <button type="submit">EDIT</button>
 </form>

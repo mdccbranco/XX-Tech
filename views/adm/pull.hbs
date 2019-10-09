@@ -6,7 +6,7 @@
 
   <input type='radio' name='category' value='yes' checked>Yes, she can!
   <input type='radio' name='category' value='bits'> Inspiration Bits
-  <input type='radio' name='category' value='linking'> Linking Women
+  {{!-- <input type='radio' name='category' value='linking'> Linking Women --}}
 
   <div id="link-info" hidden>
     <label for="">Title:</label>
@@ -38,7 +38,7 @@
 {{#each arrCommit}}
 {{#unless this.post}}
 <div>
-  <p> {{this.owner.username}} | {{this.url}} | {{this.description}} </p>
+  <p>  {{this.owner.username}} | {{this.url}} | {{this.description}} | {{this.category}} </p>
 </div>
 <form action="/adm/{{this.id}}/delete" method="post">
   <button type="submit">delete</button>
