@@ -84,7 +84,20 @@
     </div>
   </nav>
   {{!-- End NavBar --}}
+<div class="logger">
+  {{!-- //APENAS USER TEM ACESSO --}}
+  {{#if user}}
+  Olá, {{user.username}}
+  {{/if}}
+  {{#if isUser}}
+  <a href="user/commit" class="btnAuth">Commit to us</a>
+  {{/if}}
 
+  {{!-- //APENAS ADM TEM ACESSO --}}
+  {{#if isAdm}}
+  <a href="adm/pull" class="btnAuth">check pull</a>
+  {{/if}}
+</div>
   {{!-- Login modal --}}
   <div class="modal fade" id="elegantModalForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
     aria-hidden="true">

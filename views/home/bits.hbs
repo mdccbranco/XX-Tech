@@ -1,27 +1,15 @@
-<div class="logger">
-  {{!-- //APENAS USER TEM ACESSO --}}
-  {{#if user}}
-  Olá, {{user.username}}
-  {{/if}}
-  {{#if isUser}}
-  <a href="user/commit" class="btnAuth">Commit to us</a>
-  {{/if}}
-
-  {{!-- //APENAS ADM TEM ACESSO --}}
-  {{#if isAdm}}
-  <a href="adm/pull" class="btnAuth">check pull</a>
-  {{/if}}
-</div>
 
 {{#if isAdm}}
 <div class="container-ysc">
   {{#each commit}}
-  <form action="/adm/{{this.id}}/delete" method="post">
-    <button type="submit"><img src='/images/delete-button.png' width="20px"></button>
-  </form>
-  <form action="/adm/{{this.id}}/edit" method="get">
-    <button type="submit"><img src='/images/pencil.png' width="20px"></button>
-  </form>
+  <div>
+    <form action="/adm/{{this.id}}/delete" method="post">
+      <button type="submit"><img src='/images/delete-button.png' width="20px"></button>
+    </form>
+    <form action="/adm/{{this.id}}/edit" method="get">
+      <button type="submit"><img src='/images/pencil.png' width="20px"></button>
+    </form>
+  </div>
   <div class="col-sm-3 card-ysc">
     <a href="{{this.url}}">
       <img class="card-img-top img-ysc" src="{{this.imgPath}}" alt=""></a>
