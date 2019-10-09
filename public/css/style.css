@@ -152,6 +152,8 @@
   flex-direction: row;
 }
 
+
+
 .ContentContainer-linking {
   display: flex;
   flex-direction: column;
@@ -222,6 +224,40 @@
   margin-bottom: 32px;
   background-color: white;
 }
+
+.icon-img-gif>img {
+  width: 70%;
+  margin-left: 15%;
+  border: 5px solid #b88cff;
+  border-radius: 30%;
+  margin-bottom: 32px;
+  background-color: white;
+}
+
+.ContentContainer-girl-in-formation {
+  display: block;
+  background-color: #F0DCD7;
+  z-index: 1;
+  padding: 75px;
+  min-height: 80vh;
+  padding: 100px 50px;
+}
+
+.textGif {
+  color: #4f567d;
+  padding-bottom: 50px;
+  padding-top: 20px;
+}
+
+
+/* .gif-course {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid red;
+  align-items: center;
+} */
 
 .icon-text>p {
   text-align: center;
