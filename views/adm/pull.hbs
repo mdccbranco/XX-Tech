@@ -16,8 +16,6 @@
     <input type="date" name="date">
     <label for="">Endereço:</label>
     <input type="text" name="address">
-    <label for="">url:</label>
-    <input type="text" name="url">
 
     <label>Coordinates</label>
     <input type="text" name="latitude" placeholder="latitude">
@@ -38,6 +36,23 @@
 
 <h5>PENDING</h5>
 {{#each arrCommit}}
+{{#unless this.post}}
+<div>
+  <p> {{this.owner.username}} | {{this.url}} | {{this.description}} </p>
+</div>
+<form action="/adm/{{this.id}}/delete" method="post">
+  <button type="submit">delete</button>
+</form>
+<a href="/adm/{{this.id}}/edit">
+  <button type="submit">edit</button>
+</a>
+<a href="/adm/{{this.id}}/post">
+  <button type="submit">post</button>
+</a>
+{{/unless}}
+{{/each}}
+
+{{#each arrLinking}}
 {{#unless this.post}}
 <div>
   <p> {{this.owner.username}} | {{this.url}} | {{this.description}} </p>

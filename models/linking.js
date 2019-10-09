@@ -6,6 +6,7 @@ const linkingSchema = new Schema(
     title: String,
     url: String,
     description: String,
+    category: String,
     owner: {type: Schema.Types.ObjectId, ref: 'User'},
     anonymous: String,
     post: {type: Boolean, default: false},
