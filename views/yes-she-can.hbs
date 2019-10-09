@@ -1,5 +1,22 @@
-<section class="container-ysc">
+{{#if user}}
+<div class="logger">
+  {{!-- //APENAS USER TEM ACESSO --}}
+  Olá, {{user.username}}
 
+  {{#if isUser}}
+  <a href="user/commit" class="btnAuth">Commit to us</a>
+  {{/if}}
+
+  {{!-- //APENAS ADM TEM ACESSO --}}
+  {{#if isAdm}}
+  <a href="adm/pull" class="btnAuth">check pull</a>
+  {{/if}}
+</div>
+{{/if}}
+
+
+<div class="container-ysc">
+  {{#each commit}}
   <div class="col-sm-3 card-ysc">
     <a href="{{this.url}}">
       <img class="card-img-top img-ysc" src="{{this.imgPath}}" alt=""></a>
@@ -8,9 +25,9 @@
       {{#if this.anonymous}}
       <p> postado por Anonimo</p>
       {{else}}
-      <p> postado por {{this.owner.role}}</p>
+      <p> postado por {{this.owner.username}}</p>
       {{/if}}
     </div>
   </div>
-
-  </div>
+  {{/each}}
+</div>
