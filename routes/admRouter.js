@@ -99,7 +99,7 @@ admRouter.get('/:id/edit', (req, res, next) => {
   Commit.findById(req.params.id)
     .then(commit => {
       res.render('adm/edit', {
-        commit
+        commit, user: req.user,
       });
     })
     .catch(error => {
@@ -129,8 +129,7 @@ admRouter.post('/:id', (req, res, next) => {
 admRouter.get('/:id/post', (req, res, next) => {
   Commit.findById(req.params.id)
     .then(commit => {
-      // res.send(commit);
-      res.render('adm/post', {
+      res.render('adm/post', { user: req.user,
         commit
       });
     })
@@ -140,7 +139,6 @@ admRouter.get('/:id/post', (req, res, next) => {
 });
 
 admRouter.post('/:id/post', uploadCloud.single('photo'), (req, res, next) => {
-  console.log('======>', req.body);
   const {url, description, category} = req.body;
   if (req.body.changePhoto === 'yes') {
     const imgPath = req.file.url;
