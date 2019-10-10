@@ -87,23 +87,24 @@
     </div>
   </nav>
   {{!-- End NavBar --}}
-<div class="logger">
-  {{!-- //APENAS USER TEM ACESSO --}}
-  {{#if user}}
-  {{#if ola}}
-  {{ola}},
-  {{/if}}
-  {{user.username}}
-  {{/if}}
-  {{#if isUser}}
-  <a href="user/commit" class="btnAuth">Commit to us</a>
-  {{/if}}
+  <div class="logger">
 
-  {{!-- //APENAS ADM TEM ACESSO --}}
-  {{#if isAdm}}
-  <a href="adm/pull" class="btnAuth">check pull</a>
-  {{/if}}
-</div>
+    {{!-- //APENAS USER TEM ACESSO --}}
+    {{#if user}}
+    {{#if ola}}
+    {{ola}},
+    {{/if}}
+    {{user.username}}
+    {{/if}}
+    {{#if isUser}}
+    <a href="user/commit" class="btnAuth">Commit to us</a>
+    {{/if}}
+
+    {{!-- //APENAS ADM TEM ACESSO --}}
+    {{#if isAdm}}
+    <a href="adm/pull" class="btnAuth">Check pull</a>
+    {{/if}}
+  </div>
   {{!-- Login modal --}}
   <div class="modal fade" id="elegantModalForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
     aria-hidden="true">
@@ -174,7 +175,7 @@
           <!--Body-->
           <form action='/signup' method="POST">
             <div class="md-form mb-5">
-              <input id="Form-login" class="form-control" name="username" required>
+              <input id="Form-logiN" class="form-control" name="username" required>
               <label data-error="wrong" data-success="right" for="Form-login">Your username</label>
             </div>
 
@@ -184,7 +185,7 @@
             </div>
 
             <div class="md-form pb-3">
-              <input type="password" id="Form-pass1" class="form-control validate" name="password" required>
+              <input type="password" id="Form-pass2" class="form-control validate" name="password" required>
               <label data-error="wrong" data-success="right" for="Form-pass1">Your password</label>
             </div>
 
