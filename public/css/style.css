@@ -138,6 +138,36 @@
   min-height: 90vh;
 }
 
+
+.quem-somos{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #F0DCD7;
+  z-index: 1;
+  padding: 75px;
+  min-height: 50vh;
+}
+
+.cenario-atual{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #35597b;
+  z-index: 1;
+  padding: 75px;
+  min-height: 50vh;
+  color: white;
+}
+
+.about-info{
+  
+
+}
 .Content-inspirations {
   display: flex;
   flex-direction: row;
@@ -417,12 +447,14 @@ footer {
 }
 
 .about-info {
-  height: 70vh;
-  width: 80vw;
+  /* height: 70vh; */
+  /* width: 80vw; */
   border-radius: 100px;
   display: flex;
   align-items: flex-start;
   justify-content: center;
+  max-width: 600px;
+  text-align: justify;
 }
 
 .add-pull {
