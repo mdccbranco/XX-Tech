@@ -417,7 +417,6 @@ footer {
 }
 
 .about-info {
-  /* background-color: rgba(255, 255, 255, 0.20); */
   height: 70vh;
   width: 80vw;
   border-radius: 100px;
@@ -466,6 +465,13 @@ footer {
   padding-right: 20px;
 }
 
+input[data="commit"] {
+  border: 0.5px solid white;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.50);
+  color: white;
+}
+
 .btn-pull-add {
   background-color: rgba(255, 255, 255, 0.50);
   border-radius: 10px;
@@ -495,4 +501,30 @@ footer {
 
 .pendig-icon-del {
   vertical-align: baseline !important
+}
+
+.post-pull {
+  background-color: #355a7b;
+  height: 100vh;
+  padding-top: 50px;
+  text-align: center;
+}
+
+.title-post-pull-p {
+  color: white;
+  padding-bottom: 30px;
+}
+
+.title-post-pull {
+  color: white;
+}
+
+.form-post-category {
+  color: white;
+}
+
+.btn-post-adm {
+  background-color: transparent;
+  border: none;
+  color: white;
 }

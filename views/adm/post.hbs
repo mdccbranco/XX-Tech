@@ -1,28 +1,38 @@
-<h5>POST COMMIT</h5>
-<form action="/adm/{{commit._id}}/post" method="post" enctype="multipart/form-data">
-  <label for="">Url: </label>
-  <input type="text" name="url" value="{{commit.url}}">
-  Category - {{commit.category}}
-  <br>
-  <input type='radio' name='category' value='yes' checked>Yes, she can!
-  <input type='radio' name='category' value='bits'> Inspiration Bits
-  {{!-- <input type='radio' name='category' value='linking'> Linking Women --}}
+<div class="post-pull">
+  <h3 class="title-post-pull">Pull</h3>
+  <p class="title-post-pull-p"> (edite e poste os commits)</p>
+  <form class="form-post-category" action="/adm/{{commit._id}}/post" method="post" enctype="multipart/form-data">
+    <h5>Categoria: {{commit.category}}</h5>
+    <br>
+    <input type='radio' name='category' value='yes' checked>Yes, she can! &nbsp
+    <input type='radio' name='category' value='bits'> Inspiration Bits &nbsp
+    <input type='radio' name='category' value='linking'> Linking Women
+    <br>
+    <br>
+    <label for="">URL: </label>
+    <input data="commit" size='70' type="text" name="url" value="{{commit.url}}">
+    <br>
+    <br>
+    <label for="">Description:</label>
+    <input data="commit" size='70' type="text" name="description" value="{{commit.description}}">
+    <br>
+    <br>
+    Mudar a foto:
+    <input type='radio' name='changePhoto' value='no' checked> Não
+    <input type='radio' name='changePhoto' value='yes'> Sim
+    <br>
 
-  <label for="">Description:</label>
-  <input type="text" name="description" value="{{commit.description}}">
+    Imagem atual: <img src="{{commit.imgPath}}" width="100px">
+    <br>
+    <br>
+    <div id="get-img" hidden>
+      <label>Imagem :</label>
+      <input data="commit" type="file" name="photo">
+    </div>
+    <br>
+    <br>
 
-  Mudar a foto:
-  <input type='radio' name='changePhoto' value='no' checked> Não
-  <input type='radio' name='changePhoto' value='yes'> Sim
-
-  Imagem atual: <img src="{{commit.imgPath}}" width="100px">
-  <br>
-
-  <div id="get-img" hidden>
-    <label>Imagem :</label>
-    <input type="file" name="photo">
-  </div>
-
-
-  <button type="submit"><img src="/images/checked.png" width="30px"></button>
-</form>
+    <button class="btn-post-adm" type="submit"><img src="/images/checked.png" width="40px"></button>
+    <a class="btn-post-adm" href="/adm/pull"><img src="/images/cancel.png" width="40px"></a>
+  </form>
+</div>
