@@ -3,36 +3,36 @@
   <p class="title-post-pull-p"> (edite e poste os commits)</p>
   <form class="form-post-category" action="/adm/{{commit._id}}/post" method="post" enctype="multipart/form-data">
     <h5>Categoria: {{commit.category}}</h5>
-    <br>
-    <input type='radio' name='category' value='yes' checked>Yes, she can! &nbsp
-    <input type='radio' name='category' value='bits'> Inspiration Bits &nbsp
-    <input type='radio' name='category' value='linking'> Linking Women
-    <br>
-    <br>
-    <label for="">URL: </label>
-    <input data="commit" size='70' type="text" name="url" value="{{commit.url}}">
-    <br>
-    <br>
-    <label for="">Description:</label>
-    <input data="commit" size='70' type="text" name="description" value="{{commit.description}}">
-    <br>
-    <br>
-    Mudar a foto:
-    <input type='radio' name='changePhoto' value='no' checked> Não
-    <input type='radio' name='changePhoto' value='yes'> Sim
-    <br>
+    <div class="infos-pull">
+      <input type='radio' name='category' value='yes' checked>Yes, she can! &nbsp
+      <input type='radio' name='category' value='bits'> Inspiration Bits &nbsp
+      <input type='radio' name='category' value='linking'> Linking Women
+    </div>
+    <div class="infos-pull-url">
+      <label class="form-pull-url" for="">URL: </label>
+      <input data="commit" size='60' type="text" name="url" value="{{commit.url}}">
+    </div>
+    <div class="infos-pull">
+      <label class="form-pull" for="">Título:</label>
+      <input data="commit" size='60' type="text" name="description" value="{{commit.description}}">
+    </div>
+    <div class="infos-pull">
+      Mudar a foto:
+      <input type='radio' name='changePhoto' value='no' checked> Não
+      <input type='radio' name='changePhoto' value='yes'> Sim
+    </div>
+    <div class="infos-pull">
+      Imagem atual: <img src="{{commit.imgPath}}" width="100px">
+    </div>
 
-    Imagem atual: <img src="{{commit.imgPath}}" width="100px">
-    <br>
-    <br>
     <div id="get-img" hidden>
       <label>Imagem :</label>
       <input data="commit" type="file" name="photo">
     </div>
-    <br>
-    <br>
 
-    <button class="btn-post-adm" type="submit"><img src="/images/checked.png" width="40px"></button>
-    <a class="btn-post-adm" href="/adm/pull"><img src="/images/cancel.png" width="40px"></a>
+    <div class="btn-pull">
+      <a class="btn-pull-adm" href="/adm/pull"><img src="/images/cancel.png" width="40px"></a>
+      <button class="btn-pull-adm" type="submit"><img src="/images/checked.png" width="40px"></button>
   </form>
+</div>
 </div>

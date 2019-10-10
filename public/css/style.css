@@ -523,10 +523,22 @@ input[data="commit"] {
   color: white;
 }
 
-.btn-post-adm {
+.infos-pull {
+  padding-bottom: 15px;
+}
+
+.infos-pull-url {
+  padding-bottom: 10px;
+}
+
+.btn-pull-adm {
   background-color: transparent;
   border: none;
   color: white;
+}
+
+.btn-pull {
+  padding-top: 15px;
 }
 
 .edit-commit {
@@ -535,4 +547,5 @@ input[data="commit"] {
   height: 100vh;
   padding-top: 50px;
   text-align: center;
+  color: white;
 }
