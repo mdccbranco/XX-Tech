@@ -718,6 +718,7 @@ input[data="commit"] {
 .btn-auth-social {
   background-color: rgba(255, 255, 255, 0.50);
   border-radius: 10px;
+  border: 1px solid white;
   width: 150px;
   padding: 3px;
   color: white;
@@ -725,9 +726,30 @@ input[data="commit"] {
   font-family: 'Dosis', sans-serif;
 }
 
+.btn-auth-social-login {
+  background-color: rgba(255, 255, 255, 0.50);
+  border-radius: 10px;
+  border: 1px solid white;
+  width: 30px;
+  padding: 3px;
+  color: white;
+  font-size: 14px;
+  font-family: 'Dosis', sans-serif;
+}
+
+.btn-auth-social-login:hover {
+  text-decoration: none;
+  color: #a65279;
+}
+
+.account-message {
+  margin-top: 10px;
+}
+
 .btn-auth {
   background-color: rgba(255, 255, 255, 0.50);
   border-radius: 10px;
+  border: 1px solid white;
   width: 150px;
   padding: 3px;
   color: white;
@@ -751,6 +773,12 @@ input[data="commit"] {
 
 .form-search {
   text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.hr-search {
+  border-color: white;
 }
 
 ::-webkit-input-placeholder {
