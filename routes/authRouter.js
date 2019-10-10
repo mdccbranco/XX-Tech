@@ -5,6 +5,7 @@ const bcrypt = require('bcrypt');
 const bcryptSalt = 10;
 const User = require('../models/user');
 const GitHubStrategy = require('passport-github').Strategy;
+const nodemailer = require('nodemailer');
 
 authRoutes.get('/signup', (req, res, next) => {
   res.render('auth/signup');
@@ -39,7 +40,25 @@ authRoutes.post('/signup', (req, res, next) => {
         if (err) {
           res.render('auth/signup', {message: 'Something went wrong'});
         } else {
-          res.redirect('/');
+          //pegar o email do formulário
+            let transporter = nodemailer.createTransport({
+              service: 'Gmail',
+              auth: {
+                user: 'contato.xxtech@gmail.com',
+                pass: 'grazimonica'
+              }
+            });
+            transporter.sendMail({
+              from: '"My Awesome Project 👻" <myawesome@project.com>',
+              to: 'monicadamasceno@gmail.com', 
+              //to: newUser.email,
+              subject: 'subject', 
+              text: 'message',
+              html: `<b>Teste</b>`
+            })
+            .then(info => res.redirect('/'))
+            .catch(error => console.log(error));
+          // res.redirect('/');
         }
       });
     })
