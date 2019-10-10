@@ -1,8 +1,8 @@
 <div class="container-ysc-home">
   <h1 class="ysc-text-h1"> Yes, she can!</h1>
-  <form action='/yes-she-can/search' method='post'>
-    <input name='search' placeholder='Search'>
-    <button type='submit'> Search </button>
+  <form class='form-search' action='/yes-she-can/search' method='post'>
+    <input size='80' data="commit" name='search' placeholder='Search'>
+    <button class="btn-search" type='submit'> Search </button>
   </form>
   <div class="container-ysc">
     {{#if isAdm}}
@@ -41,7 +41,7 @@
 
 <div class="container-ysc">
   {{#unless commit}}
-  <p class= 'no-results'>Nenhum resultado foi encontrado.</p>
+  <p class='no-results'>Nenhum resultado foi encontrado.</p>
   {{/unless}}
   {{#each commit}}
   <div class="col-sm-3 card-ysc">

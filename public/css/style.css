@@ -738,3 +738,35 @@ input[data="commit"] {
 .no-results {
   color: white;
 }
+
+.btn-search {
+  background-color: rgba(255, 255, 255, 0.50);
+  border-radius: 10px;
+  width: 80px;
+  padding: 3px;
+  color: white;
+  font-size: 14px;
+  font-family: 'Dosis', sans-serif;
+}
+
+.form-search {
+  text-align: center;
+}
+
+::-webkit-input-placeholder {
+  color: white;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: white;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: white;
+}
+
+:-ms-input-placeholder {
+  color: white;
+}

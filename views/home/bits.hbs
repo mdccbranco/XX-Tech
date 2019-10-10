@@ -1,8 +1,8 @@
 <div class="container-bits-home">
   <h1 class="bits-text-h1"> Information Bits</h1>
-  <form action='/inspiration-bits/search' method='post'>
-    <input name='search' placeholder='Search'>
-    <button type='submit'> Search </button>
+  <form class='form-search' action='/inspiration-bits/search' method='post'>
+    <input size='80' data="commit" name='search' placeholder='Search'>
+    <button class="btn-search" type='submit'> Search </button>
   </form>
   <div class="container-bits">
     {{#if isAdm}}
@@ -41,7 +41,7 @@
 
 <div class="container-bits">
   {{#unless commit}}
-  <p class= 'no-results'>Nenhum resultado foi encontrado.</p>
+  <p class='no-results'>Nenhum resultado foi encontrado.</p>
   {{/unless}}
   {{#each commit}}
   <div class="col-sm-3 card-ysc">
