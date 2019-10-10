@@ -48,12 +48,18 @@
   flex-grow: 0 !important
 }
 
+.nav-link {
+  font-family: 'Dosis', sans-serif;
+  font-size: 20px;
+}
 
 
 .auth {
   color: #a65279;
   padding: none;
   font-weight: bold;
+  font-family: 'Dosis', sans-serif;
+  font-size: 20px;
 }
 
 .MainContainer {
