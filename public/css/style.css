@@ -549,3 +549,18 @@ input[data="commit"] {
   text-align: center;
   color: white;
 }
+
+.add-pull-user {
+  background-color:
+    #a65279;
+  padding-top: 50px;
+  text-align: center;
+}
+
+.pending-pull-user {
+  background-color:
+    #a65279;
+  text-align: center;
+  padding-top: 50px;
+  height: 50vh;
+}
