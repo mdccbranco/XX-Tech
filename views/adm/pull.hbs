@@ -38,13 +38,13 @@
 {{#each arrCommit}}
 {{#unless this.post}}
 <div>
-  <p>  {{this.owner.username}} | {{this.url}} | {{this.description}} | {{this.category}} </p>
+  <p> {{this.owner.username}} | {{this.url}} | {{this.description}} | {{this.category}} </p>
 </div>
 <form action="/adm/{{this.id}}/delete" method="post">
   <button type="submit"><img src="/images/delete-button.png" alt="Deletar" width="20px"></button>
 </form>
 <a href="/adm/{{this.id}}/post">
-  <img src="/images/checked.png" alt="Postar" width="20px">
+  <img src='/images/pencil.png' alt="Postar" width="20px">
 </a>
 
 {{/unless}}
@@ -62,7 +62,7 @@
   <button type="submit">edit</button>
 </a>
 <a href="/adm/{{this.id}}/post">
-  <button type="submit">post</button>
+  <img src='/images/checked.png' alt="Postar" width="20px">
 </a>
 {{/unless}}
 {{/each}}
