@@ -1,33 +1,23 @@
-<h2>EDIT COMMIT</h2>
-<form action="/user/{{commit._id}}" method="post">
-  {{!-- {{#if commit.anonymous}}
-  Status atual: Postar como anonimo
-  <br><br>
-  Retirar o anonimato?
-  <input type='radio' name='changeAnonymous' value='no' checked> Não
-  <input type='radio' name='changeAnonymous' value='yes'> Sim
-  <br><br>
-  <div id="show-anonymous" hidden>
-    <input type='checkbox' name='anonymous'> Postar como {{commit.owner.username}}
-    <br>
-  </div>
-  {{else}}
-   Postar como {{commit.owner.username}}
-  {{/if}} --}}
-  <br><br>
-  Categoria do post: {{commit.category}}
-  <br><br>
-  <label for="">Url da notícia: </label>
-  <input type="text" name="url" value="{{commit.url}}">
-  <br><br>
-  <input type='radio' name='category' value='yes' checked>Yes, she can!
-  <input type='radio' name='category' value='bits'> Inspiration Bits
-  {{!-- <input type='radio' name='category' value='linking'> Linking Women --}}
-  <br><br>
-  <label for="">Description:</label>
-  <input type="text" name="description" value="{{commit.description}}">
-  <br><br>
+<div class="edit-commit">
+  <h3 class="title-post-pull">Editar Commit</h3>
+  <p class="title-post-pull-p"> (edite seus commits pendentes)</p>
+  <form class="form-post-category" action="/user/{{commit._id}}" method="post">
+    <h5>Categoria: {{commit.category}}</h5>
+    <div class="infos-pull">
+      <input type='radio' name='category' value='yes' checked>Yes, she can! &nbsp
+      <input type='radio' name='category' value='bits'> Inspiration Bits &nbsp
+      <input type='radio' name='category' value='linking'> Linking Women
+    </div>
+    <div class="infos-pull">
+      <label class="form-pull-url" for="">URL: </label>
+      <input data="commit" size='70' type="text" name="url" value="{{commit.url}}">
+    </div>
+    <div class="infos-pull">
+      <label class="form-pull" for="">Título:</label>
+      <input data="commit" size='70' type="text" name="description" value="{{commit.description}}">
+    </div>
 
-  <a href="/user/commit"> <img src="/images/cancel.png" width="30px"></a>
-  <button type="submit"><img src="/images/checked.png" width="30px"></button>
-</form>
+    <a class="btn-pull-adm" href="/user/commit"> <img src="/images/cancel.png" width="30px"></a>
+    <button class="btn-pull-adm" type="submit"><img src="/images/checked.png" width="30px"></button>
+  </form>
+</div>
