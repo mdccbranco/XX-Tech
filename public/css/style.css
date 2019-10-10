@@ -636,6 +636,7 @@ input[data="commit"] {
   justify-content: center;
   padding-bottom: 100px;
   color: white;
+  font-family: 'Dosis', sans-serif;
 }
 
 .login-auth {
@@ -649,6 +650,7 @@ input[data="commit"] {
   background-color: rgba(255, 255, 255, 0.10);
   border: 0.5px solid white;
   border-radius: 10px;
+  font-family: 'Dosis', sans-serif;
 }
 
 .btn-auth-social {
@@ -656,8 +658,9 @@ input[data="commit"] {
   border-radius: 10px;
   width: 150px;
   padding: 3px;
-  color: #a65279;
+  color: white;
   font-size: 14px;
+  font-family: 'Dosis', sans-serif;
 }
 
 .btn-auth {
@@ -665,7 +668,7 @@ input[data="commit"] {
   border-radius: 10px;
   width: 150px;
   padding: 3px;
-  color: #a65279;
+  color: white;
   font-size: 14px;
   margin-top: 20px;
 }
