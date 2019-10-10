@@ -33,6 +33,7 @@ router.get('/', (req, res, next) => {
     }
   }
   Commit.find({post: true, category: 'yes'})
+  .sort({createdAt: -1})
   .limit(4)
   .then( yes => {
     res.render('index', { user: req.user, isAdm, isUser, ola, yes})
@@ -71,6 +72,7 @@ router.get('/yes-she-can', (req, res, next) => {
       post: true,
       category: 'yes'
     })
+    .sort({createdAt: -1})
     .populate('owner')
     .then(commit => {
       console.log(commit);
@@ -105,6 +107,7 @@ router.post('/yes-she-can/search', (req, res, next) => {
           $caseSensitive: false
         }
     })
+    .sort({createdAt: -1})
     .populate('owner')
     .then(commit => {
       console.log(commit);
@@ -134,6 +137,7 @@ router.get('/inspiration-bits', (req, res, next) => {
       post: true,
       category: 'bits'
     })
+    .sort({createdAt: -1})
     .populate('owner')
     .then(commit => {
       // res.send(commit);
@@ -167,6 +171,7 @@ router.post('/inspiration-bits/search', (req, res, next) => {
         $caseSensitive: false
       }
     })
+    .sort({createdAt: -1})
     .populate('owner')
     .then(commit => {
       res.render('home/bits', {
