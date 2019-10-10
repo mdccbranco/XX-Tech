@@ -49,7 +49,7 @@ userRouter.post('/:id/delete', checkRoles('user'), (req, res, next) => {
 userRouter.get('/:id/edit', (req, res, next) => {
   Commit.findById(req.params.id)
     .then(commit => {
-      res.render('user/edit', {commit});
+      res.render('user/edit', {commit, user: req.user});
     })
     .catch(error => {
       console.log('Error in edit: ', error);

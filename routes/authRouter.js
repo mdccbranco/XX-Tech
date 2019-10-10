@@ -65,13 +65,12 @@ authRoutes.post('/signup', (req, res, next) => {
               from: "XX-TECH <contato.xxtech@gmail.com>",
               //to: 'monicadamasceno@gmail.com', 
               to: newUser.email,
-              subject: 'Seja bem vindo ao XX-Tecah',
+              subject: 'Seja bem vindo ao XX-Tech',
               // text: 'message',
               html: `<b>Obrigada por se inscrever no XX Tech.</b><br> Estamos muito felizes com a sua presença, a partir de agora voce pode logar no nosso site e sugerir conteúdo relacionado a presença feminina no mercado de trabalho das exatas e tecnologias.`
             })
             .then(info => res.redirect('/'))
             .catch(error => console.log(error));
-          // res.redirect('/');
         }
       });
     })
@@ -82,7 +81,7 @@ authRoutes.post('/signup', (req, res, next) => {
 
 authRoutes.get('/login', (req, res, next) => {
   res.render('auth/login', {
-    message: 'error'
+    message: 'error', user: req.user
   });
 });
 
