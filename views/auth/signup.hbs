@@ -2,11 +2,14 @@
 
 <form action="/signup" method="POST" id="form-container">
   <label for="username">Username</label>
-  <input id="username" type="text" name="username" placeholder="Your name">
+  <input id="username" type="text" name="username" placeholder="Your name" required>
   <br></br>
   <label for="password">Password</label>
-  <input id="password" type="password" name="password" placeholder="Your password">
+  <input id="password" type="password" name="password" placeholder="Your password" required>
   <br></br>
+  <label for="email">Your email</label>
+  <input type="email" name="email" placeholder="Your email" required>
+
   {{!-- <label for="role">Role</label>
   <select name="role">
     <option value="adm">ADM</option>
