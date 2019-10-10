@@ -7,7 +7,7 @@
       <input name='owner' value='{{user._id}}' type='hidden'>
       <input type='radio' name='category' value='yes' checked>Yes, she can! &nbsp
       <input type='radio' name='category' value='bits'> Inspiration Bits &nbsp
-      <input type='radio' name='category' value='linking'> Linking Women
+      {{!-- <input type='radio' name='category' value='linking'> Linking Women --}}
     </div>
 
     <br>
@@ -21,7 +21,7 @@
       <input data="commit" size='60' type="text" name="description">
     </div>
 
-    <div id="link-info" hidden>
+    {{!-- <div id="link-info" hidden>
       <label class="form-pull" for="">Data</label>
       <input data="commit" type="date" name="date">
       <label class="form-pull" for="">Endereço:</label>
@@ -30,7 +30,7 @@
       <label class="form-pull">Coordinates</label>
       <input data="commit" type="text" name="latitude" placeholder="latitude">
       <input data="commit" type="text" name="longitude" placeholder="longitude">
-    </div>
+    </div> --}}
 
     <button class="btn-pull-add" type="submit">ADD</button>
   </form>
