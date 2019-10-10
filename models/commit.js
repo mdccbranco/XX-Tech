@@ -7,7 +7,7 @@ const commitSchema = new Schema(
     url: String,
     // category: {type: String, enum:['yes', 'bits']},
     category: String,
-    description: String,
+    description: {type: String, text: true},
     owner: {type: Schema.Types.ObjectId, ref: 'User'},
     anonymous: String,
     post: {type: Boolean, default: false},
