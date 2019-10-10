@@ -77,7 +77,7 @@
           {{/unless}}
           {{#if user}}
           <li class="nav-item">
-            <a class="btn auth" href='user/logout'>Logout</a>
+            <a class="btn auth" href='{{req.user.role}}/logout'>Logout</a>
           </li>
           {{/if}}
 
