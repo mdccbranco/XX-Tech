@@ -1,31 +1,34 @@
-<div class="container-ysc">
-  {{#if isAdm}}
-  {{#each commit}}
-  <div class="col-sm-3 card-ysc">
-    <a href="{{this.url}}">
-      <img class="img-ysc" src="{{this.imgPath}}" alt=""></a>
-    <div class="card-body">
-      <h6 class="card-text">{{this.description}}</h6>
-      {{#if this.anonymous}}
-      <div class="card-postado">
-        <p class="card-text-post"> postado por Anonimo</p>
+<div class="container-ysc-home">
+  <h1 class="ysc-text-h1"> Information Bits</h1>
+  <div class="container-ysc">
+    {{#if isAdm}}
+    {{#each commit}}
+    <div class="col-sm-3 card-ysc">
+      <a href="{{this.url}}">
+        <img class="img-ysc" src="{{this.imgPath}}" alt=""></a>
+      <div class="card-body">
+        <h6 class="card-text">{{this.description}}</h6>
+        {{#if this.anonymous}}
+        <div class="card-postado">
+          <p class="card-text-post"> postado por Anonimo</p>
+        </div>
+        {{else}}
+        <div class="card-postado">
+          <p class="card-text-post"> postado por {{this.owner.username}}</p>
+        </div>
+        {{/if}}
       </div>
-      {{else}}
-      <div class="card-postado">
-        <p class="card-text-post"> postado por {{this.owner.username}}</p>
-      </div>
-      {{/if}}
     </div>
+    <div class="container-ysc-commit">
+      <form action="/adm/{{this.id}}/delete" method="post">
+        <button class='icon-del' type="submit"><img src='/images/delete-button.png' width="20px"></button>
+      </form>
+      <form action="/adm/{{this.id}}/edit" method="get">
+        <button class='icon-edit' type="submit"><img src='/images/pencil.png' width="20px"></button>
+      </form>
+    </div>
+    {{/each}}
   </div>
-  <div class="container-ysc-commit">
-    <form action="/adm/{{this.id}}/delete" method="post">
-      <button class='icon-del' type="submit"><img src='/images/delete-button.png' width="20px"></button>
-    </form>
-    <form action="/adm/{{this.id}}/edit" method="get">
-      <button class='icon-edit' type="submit"><img src='/images/pencil.png' width="20px"></button>
-    </form>
-  </div>
-  {{/each}}
 </div>
 
 

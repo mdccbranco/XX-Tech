@@ -206,7 +206,7 @@
 
 .title-yesSheCan:hover {
   text-decoration: none;
-  color: #8898B8;
+  color: #F49B96;
 }
 
 
@@ -350,8 +350,18 @@ footer {
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
+
+}
+
+.container-ysc-home {
   background-color: #355a7b;
   min-height: 100vh;
+}
+
+.ysc-text-h1 {
+  padding-left: 50px;
+  padding-top: 50px;
+  color: white;
 }
 
 .container-bits {
@@ -359,8 +369,18 @@ footer {
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
+
+}
+
+.container-bits-home {
   background-color: #a65279;
   min-height: 100vh;
+}
+
+.bits-text-h1 {
+  padding-left: 50px;
+  padding-top: 50px;
+  color: white;
 }
 
 .icon-del {
