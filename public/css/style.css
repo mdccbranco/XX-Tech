@@ -51,7 +51,7 @@
 
 
 .auth {
-  color: #b88cff;
+  color: #a65279;
   padding: none;
   font-weight: bold;
 }
@@ -107,16 +107,16 @@
 }
 
 .btn_style {
-  border-color: #F49B96;
+  border-color: #a65279;
   color: #fff;
-  box-shadow: 0 0 20px 20px #F49B96 inset, 0 0 0 0 #F49B96;
+  box-shadow: 0 0 20px 20px #a65279 inset, 0 0 0 0 #a65279;
   transition: all 150ms ease-in-out;
-  background: #F49B96;
+  background: #a65279;
 
 }
 
 .btn_style:hover {
-  box-shadow: 0 0 10px 0 #F49B96 inset, 0 0 10px 4px #F49B96;
+  box-shadow: 0 0 10px 0 #a65279 inset, 0 0 10px 4px #a65279;
 }
 
 
@@ -201,7 +201,7 @@
 }
 
 .title-yesSheCan {
-  color: #4E567D;
+  color: #a65279;
 }
 
 .title-yesSheCan:hover {
@@ -213,7 +213,7 @@
 .icon-img>img {
   width: 60%;
   margin-left: 15%;
-  border: 5px solid #76B5B0;
+  border: 5px solid #a65279;
   border-radius: 40%;
   margin-bottom: 32px;
   background-color: white;
@@ -276,7 +276,7 @@ footer {
 
 .devs {
   font-size: 18px;
-  color: #b88cff;
+  color: #a65279;
 }
 
 .devs:hover {
@@ -285,7 +285,7 @@ footer {
 }
 
 .card-text-home {
-  color: #4E567D;
+  color: #a65279;
   text-align: center;
   font-style: italic;
 }
@@ -395,7 +395,7 @@ footer {
 }
 
 .btnAuth {
-  color: #b88cff;
+  color: #a65279;
   margin-left: 10px;
 }
 
