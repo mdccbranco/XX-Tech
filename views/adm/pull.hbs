@@ -1,68 +1,75 @@
 {{!-- <a href="/profile"> <button>My profile</button></a> --}}
+<div class='add-pull'>
+  <h3 class="title-add-pull">Commit</h3>
+  <p class="title-add-pull">Adicione um novo commit</p>
+  <form action="/adm/commit" method="post">
+    <div class="form-pull-category">
+      <input name='owner' value='{{user._id}}' type='hidden'>
+      <input type='radio' name='category' value='yes' checked>Yes, she can! &nbsp
+      <input type='radio' name='category' value='bits'> Inspiration Bits &nbsp
+      <input type='radio' name='category' value='linking'> Linking Women
+    </div>
 
-<h5>ADD NEW COMMIT</h5>
-<form action="/adm/commit" method="post">
-  <input name='owner' value='{{user._id}}' type='hidden'>
+    <br>
+    <div>
+      <label class="form-pull-url" for="">URL:</label>
+      <input size='70' type="text" name="url">
+    </div>
 
-  <input type='radio' name='category' value='yes' checked>Yes, she can!
-  <input type='radio' name='category' value='bits'> Inspiration Bits
-  {{!-- <input type='radio' name='category' value='linking'> Linking Women --}}
+    <div>
+      <label class="form-pull" for="">Título:</label>
+      <input size='70' type="text" name="description">
+    </div>
 
-  {{!-- <div id="link-info" hidden>
-    <label for="">Title:</label>
-    <input type="text" name="title">
+    <div id="link-info" hidden>
+      <label class="form-pull" for="">Data</label>
+      <input type="date" name="date">
+      <label class="form-pull" for="">Endereço:</label>
+      <input size='30' type="text" name="address">
 
-    <label for="">Data</label>
-    <input type="date" name="date">
-    <label for="">Endereço:</label>
-    <input type="text" name="address">
+      <label class="form-pull">Coordinates</label>
+      <input type="text" name="latitude" placeholder="latitude">
+      <input type="text" name="longitude" placeholder="longitude">
+    </div>
 
-    <label>Coordinates</label>
-    <input type="text" name="latitude" placeholder="latitude">
-    <input type="text" name="longitude" placeholder="longitude">
-  </div> --}}
+    <button class="btn-pull-add" type="submit">ADD</button>
+  </form>
 
-  <label for="">url:</label>
-  <input type="text" name="url">
-
-  <label for="">Description:</label>
-  <input type="text" name="description">
-
-  <button type="submit">ADD</button>
-</form>
-
-<br>
-<hr>
-
-<h5>PENDING</h5>
-{{#each arrCommit}}
-{{#unless this.post}}
-<div>
-  <p> {{this.owner.username}} | {{this.url}} | {{this.description}} | {{this.category}} </p>
+  <br>
+  <hr>
 </div>
-<form action="/adm/{{this.id}}/delete" method="post">
-  <button type="submit"><img src="/images/delete-button.png" alt="Deletar" width="20px"></button>
-</form>
-<a href="/adm/{{this.id}}/post">
-  <img src='/images/pencil.png' alt="Postar" width="20px">
-</a>
+<div class='pending-pull'>
+  <h3 class="title-add-pull">Histórico</h3>
+  <p class="title-add-pull">Edite, delete e poste os commits pendentes</p>
+  {{#each arrCommit}}
+  {{#unless this.post}}
+  <div>
+    <p> {{this.owner.username}} | {{this.url}} | {{this.description}} | {{this.category}} </p>
+  </div>
+  <form action="/adm/{{this.id}}/delete" method="post">
+    <button type="submit"><img src="/images/delete-button.png" alt="Deletar" width="20px"></button>
+  </form>
+  <a href="/adm/{{this.id}}/post">
+    <img src='/images/pencil.png' alt="Postar" width="20px">
+  </a>
 
-{{/unless}}
-{{/each}}
+  {{/unless}}
+  {{/each}}
 
-{{#each arrLinking}}
-{{#unless this.post}}
-<div>
-  <p> {{this.owner.username}} | {{this.url}} | {{this.description}} </p>
+  {{#each arrLinking}}
+  {{#unless this.post}}
+  <div>
+    <p> {{this.owner.username}} | {{this.url}} | {{this.description}} </p>
+  </div>
+  <form action="/adm/{{this.id}}/delete" method="post">
+    <button type="submit">delete</button>
+  </form>
+  <a href="/adm/{{this.id}}/edit">
+    <button type="submit">edit</button>
+  </a>
+  <a href="/adm/{{this.id}}/post">
+    <img src='/images/checked.png' alt="Postar" width="20px">
+  </a>
+  {{/unless}}
+  {{/each}}
 </div>
-<form action="/adm/{{this.id}}/delete" method="post">
-  <button type="submit">delete</button>
-</form>
-<a href="/adm/{{this.id}}/edit">
-  <button type="submit">edit</button>
-</a>
-<a href="/adm/{{this.id}}/post">
-  <img src='/images/checked.png' alt="Postar" width="20px">
-</a>
-{{/unless}}
-{{/each}}

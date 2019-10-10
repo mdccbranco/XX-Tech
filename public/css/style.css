@@ -119,15 +119,6 @@
   box-shadow: 0 0 10px 0 #F49B96 inset, 0 0 10px 4px #F49B96;
 }
 
-/* h1 {
-  letter-spacing: -15px;
-  font-family: Open Sans;
-  color: white;
-  text-align: center;
-  font-size: 200px;
-  font-weight: 800;
-  line-height: 200px;
-} */
 
 .MainContainer {
   perspective: 1px;
@@ -415,7 +406,7 @@ footer {
 
 .about-us {
   background-color:
-    #e9dcfd;
+    #355a7b;
   display: block;
   z-index: 1;
   height: 100vh;
@@ -426,11 +417,56 @@ footer {
 }
 
 .about-info {
-  background-color: rgba(255, 255, 255, 0.20);
+  /* background-color: rgba(255, 255, 255, 0.20); */
   height: 70vh;
   width: 80vw;
   border-radius: 100px;
   display: flex;
   align-items: flex-start;
   justify-content: center;
+}
+
+.add-pull {
+  background-color:
+    #355a7b;
+  padding-top: 50px;
+  text-align: center;
+}
+
+.pending-pull {
+  background-color:
+    #355a7b;
+  text-align: center;
+  padding-top: 50px;
+  height: 50vh;
+}
+
+.title-add-pull {
+  color: white;
+}
+
+.form-pull {
+  color: white;
+  padding-right: 10px;
+}
+
+.form-pull-category {
+  color: white;
+  padding-right: 10px;
+}
+
+
+.form-pull-url {
+  color: white;
+  padding-right: 20px;
+}
+
+.btn-pull-add {
+  background-color: rgba(255, 255, 255, 0.50);
+  border-radius: 10px;
+  width: 80px;
+  margin-top: 20px;
+  padding: 3px;
+  color: white;
+  font-size: 14px;
 }
