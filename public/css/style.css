@@ -445,6 +445,11 @@ footer {
   color: white;
 }
 
+.title-add-pull-p {
+  color: white;
+  padding-bottom: 30px;
+}
+
 .form-pull {
   color: white;
   padding-right: 10px;
@@ -469,4 +474,25 @@ footer {
   padding: 3px;
   color: white;
   font-size: 14px;
+}
+
+.peding-edit {
+  display: flex;
+  justify-content: center;
+  color: white;
+
+}
+
+.peding-edit-del {
+  border: 1px solid white;
+  margin-left: 10px;
+  padding: 2px;
+  height: 28px;
+  width: 28px;
+  background-color: rgba(255, 255, 255, 0.50);
+  border-radius: 5px;
+}
+
+.pendig-icon-del {
+  vertical-align: baseline !important
 }

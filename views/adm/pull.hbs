@@ -1,7 +1,7 @@
 {{!-- <a href="/profile"> <button>My profile</button></a> --}}
 <div class='add-pull'>
   <h3 class="title-add-pull">Commit</h3>
-  <p class="title-add-pull">Adicione um novo commit</p>
+  <p class="title-add-pull">(Adicione um novo commit)</p>
   <form action="/adm/commit" method="post">
     <div class="form-pull-category">
       <input name='owner' value='{{user._id}}' type='hidden'>
@@ -40,18 +40,21 @@
 </div>
 <div class='pending-pull'>
   <h3 class="title-add-pull">Histórico</h3>
-  <p class="title-add-pull">Edite, delete e poste os commits pendentes</p>
+  <p class="title-add-pull-p">(Edite, delete e poste os commits pendentes)</p>
   {{#each arrCommit}}
   {{#unless this.post}}
-  <div>
-    <p> {{this.owner.username}} | {{this.url}} | {{this.description}} | {{this.category}} </p>
+  <div class='peding-edit'>
+    <div class="peding-datas">
+      <p> • {{this.owner.username}} | {{this.url}} | {{this.description}} | {{this.category}} </p>
+    </div>
+    <form action="/adm/{{this.id}}/delete" method="post">
+      <button class="peding-edit-del" type="submit"><img class='pendig-icon-del' src="/images/delete-button.png"
+          alt="Deletar" width="20px"></button>
+    </form>
+    <a href="/adm/{{this.id}}/post">
+      <img class="peding-edit-del" src='/images/pencil.png' alt="Postar" width="20px">
+    </a>
   </div>
-  <form action="/adm/{{this.id}}/delete" method="post">
-    <button type="submit"><img src="/images/delete-button.png" alt="Deletar" width="20px"></button>
-  </form>
-  <a href="/adm/{{this.id}}/post">
-    <img src='/images/pencil.png' alt="Postar" width="20px">
-  </a>
 
   {{/unless}}
   {{/each}}
