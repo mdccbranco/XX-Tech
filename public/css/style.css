@@ -236,7 +236,7 @@
 
 .title-yesSheCan:hover {
   text-decoration: none;
-  color: #8898B8;
+  color: #F49B96;
 }
 
 
@@ -380,8 +380,18 @@ footer {
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
+
+}
+
+.container-ysc-home {
   background-color: #355a7b;
   min-height: 100vh;
+}
+
+.ysc-text-h1 {
+  padding-left: 50px;
+  padding-top: 50px;
+  color: white;
 }
 
 .container-bits {
@@ -389,8 +399,18 @@ footer {
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
+
+}
+
+.container-bits-home {
   background-color: #a65279;
   min-height: 100vh;
+}
+
+.bits-text-h1 {
+  padding-left: 50px;
+  padding-top: 50px;
+  color: white;
 }
 
 .icon-del {
@@ -469,7 +489,7 @@ footer {
     #355a7b;
   text-align: center;
   padding-top: 50px;
-  height: 50vh;
+  min-height: 50vh;
 }
 
 .title-add-pull {
@@ -518,7 +538,6 @@ input[data="commit"] {
   display: flex;
   justify-content: center;
   color: white;
-
 }
 
 .peding-edit-del {
@@ -594,5 +613,50 @@ input[data="commit"] {
     #a65279;
   text-align: center;
   padding-top: 50px;
-  height: 50vh;
+  min-height: 50vh;
+}
+
+.auth-login-signup {
+  background-color:
+    #a65279;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding-bottom: 100px;
+  color: white;
+}
+
+.login-auth {
+  padding-bottom: 20px;
+  padding-top: 30px;
+}
+
+.bcg-auth {
+  height: 300px;
+  width: 400px;
+  background-color: rgba(255, 255, 255, 0.10);
+  border: 0.5px solid white;
+  border-radius: 10px;
+}
+
+.btn-auth-social {
+  background-color: rgba(255, 255, 255, 0.50);
+  border-radius: 10px;
+  width: 150px;
+  padding: 3px;
+  color: #a65279;
+  font-size: 14px;
+}
+
+.btn-auth {
+  background-color: rgba(255, 255, 255, 0.50);
+  border-radius: 10px;
+  width: 150px;
+  padding: 3px;
+  color: #a65279;
+  font-size: 14px;
+  margin-top: 20px;
 }

@@ -1,29 +1,31 @@
-<h2>Signup</h2>
+<div class="auth-login-signup">
+  <div class="bcg-auth">
 
-<form action="/signup" method="POST" id="form-container">
-  <label for="username">Username</label>
-  <input id="username" type="text" name="username" placeholder="Your name" required>
-  <br></br>
-  <label for="password">Password</label>
-  <input id="password" type="password" name="password" placeholder="Your password" required>
-  <br></br>
-  <label for="email">Your email</label>
-  <input type="email" name="email" placeholder="Your email" required>
+    <h4 class="login-auth">SIGNUP</h4>
 
-  {{!-- <label for="role">Role</label>
+    <form action="/signup" method="POST" id="form-container">
+      <div>
+        <label for="username">Username</label>
+        <input data="commit" id="username" type="text" name="username" placeholder="Your name">
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input data="commit" id="password" type="password" name="password" placeholder="Your password">
+      </div>
+      {{!-- <label for="role">Role</label>
   <select name="role">
     <option value="adm">ADM</option>
     <option value="user">USER</option>
   </select> --}}
-  {{#if message}}
-  <div class="error-message">{{ message }}</div>
-  {{/if}}
-  <br><br>
+      {{#if message}}
+      <div class="error-message">{{ message }}</div>
+      {{/if}}
+      <br><br>
 
-  <button>Create account</button>
+      <button class="btn-auth-social">Create account</button>
 
-  <p class="account-message">
-    Do you already have an account?
-    <a href="/login">Login</a>
-  </p>
-</form>
+      <p class="account-message">
+        Do you already have an account?
+        <a class="btn-auth-social" href="/login">Login</a>
+      </p>
+    </form>
