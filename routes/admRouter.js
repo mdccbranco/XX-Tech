@@ -7,7 +7,7 @@ const Linking = require('../models/linking');
 const uploadCloud = require('../middleware/cloudinary');
 
 function checkRoles(role) {
-  return function(req, res, next) {
+  return function (req, res, next) {
     if (req.isAuthenticated() && req.user.role === role) {
       return next();
     }
@@ -66,7 +66,13 @@ admRouter.post('/commit', checkRoles('adm'), (req, res, next) => {
         console.log(error);
       });
   } else {
-    const {url, category, description, owner, anonymous} = req.body;
+    const {
+      url,
+      category,
+      description,
+      owner,
+      anonymous
+    } = req.body;
     const addCommit = new Commit({
       url,
       category,
@@ -99,7 +105,8 @@ admRouter.get('/:id/edit', (req, res, next) => {
   Commit.findById(req.params.id)
     .then(commit => {
       res.render('adm/edit', {
-        commit, user: req.user,
+        commit,
+        user: req.user,
       });
     })
     .catch(error => {
@@ -108,16 +115,16 @@ admRouter.get('/:id/edit', (req, res, next) => {
 });
 
 admRouter.post('/:id', (req, res, next) => {
-  const {url, description} = req.body;
-  Commit.updateOne(
-    {
+  const {
+    url,
+    description
+  } = req.body;
+  Commit.updateOne({
       _id: req.params.id
-    },
-    {
+    }, {
       url,
       description
-    }
-  )
+    })
     .then(() => {
       res.redirect('/adm/pull');
     })
@@ -129,7 +136,8 @@ admRouter.post('/:id', (req, res, next) => {
 admRouter.get('/:id/post', (req, res, next) => {
   Commit.findById(req.params.id)
     .then(commit => {
-      res.render('adm/post', { user: req.user,
+      res.render('adm/post', {
+        user: req.user,
         commit
       });
     })
@@ -139,14 +147,24 @@ admRouter.get('/:id/post', (req, res, next) => {
 });
 
 admRouter.post('/:id/post', uploadCloud.single('photo'), (req, res, next) => {
-  const {url, description, category} = req.body;
-  if (req.body.changePhoto === 'yes') {
+  const {
+    url,
+    description,
+    category
+  } = req.body;
+  if (req.body.changePhoto === 'yes' && req.file!== undefined) {
     const imgPath = req.file.url;
     const imgName = req.file.originalname;
-    Commit.updateOne(
-      {_id: req.params.id},
-      {url, description, post: true, category, imgPath, imgName}
-    )
+    Commit.updateOne({
+        _id: req.params.id
+      }, {
+        url,
+        description,
+        post: true,
+        category,
+        imgPath,
+        imgName
+      })
       .then(() => {
         Commit.find()
           .populate('owner')
@@ -157,10 +175,22 @@ admRouter.post('/:id/post', uploadCloud.single('photo'), (req, res, next) => {
       })
       .catch(error => console.log(error));
   } else {
-    Commit.updateOne(
-      {_id: req.params.id},
-      {url, description, post: true, category}
-    )
+    Commit.find({
+      _id: req.params.id,
+      imgPath: {
+        $exists: true
+      }
+    })
+      .then( (data) => {
+        console.log(data);
+      Commit.updateOne({
+        _id: data._id
+      }, {
+        url,
+        description,
+        post: true,
+        category
+      })
       .then(() => {
         Commit.find()
           .populate('owner')
@@ -170,11 +200,17 @@ admRouter.post('/:id/post', uploadCloud.single('photo'), (req, res, next) => {
           .catch(err => console.log(`error: ${err}`));
       })
       .catch(error => console.log(error));
+      })
+    .catch(error => console.log(error))
   }
 });
 
 admRouter.get('/:id/post/edit', (req, res, next) => {
-  Commit.updateOne({_id: req.params.id}, {post: false})
+  Commit.updateOne({
+      _id: req.params.id
+    }, {
+      post: false
+    })
     .then(() => {
       res.redirect('/adm/pull');
     })
