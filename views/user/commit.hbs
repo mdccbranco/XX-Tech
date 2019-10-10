@@ -1,34 +1,58 @@
 {{!-- <a href="/profile"> <button>My profile</button></a> --}}
+<div class='add-pull-user'>
+  <h3 class="title-add-pull">Commit</h3>
+  <p class="title-add-pull">(Adicione um novo commit)</p>
+  <form action="/user/commit" method="post">
+    <div class="form-pull-category">
+      <input name='owner' value='{{user._id}}' type='hidden'>
+      <input type='radio' name='category' value='yes' checked>Yes, she can! &nbsp
+      <input type='radio' name='category' value='bits'> Inspiration Bits &nbsp
+      <input type='radio' name='category' value='linking'> Linking Women
+    </div>
 
-<h5>ADD NEW COMMIT</h5>
-<form action="/user/commit" method="post">
+    <br>
+    <div>
+      <label class="form-pull-url" for="">URL:</label>
+      <input data="commit" size='60' type="text" name="url">
+    </div>
 
+    <div>
+      <label class="form-pull" for="">Título:</label>
+      <input data="commit" size='60' type="text" name="description">
+    </div>
 
-  <input type='checkbox' name='anonymous'> postar como anonimo
-  <input name='owner' value='{{user._id}}' type='hidden'>
-  <input type='radio' name='category' value='yes' checked>Yes, she can!
-  <input type='radio' name='category' value='bits'> Inspiration Bits
+    <div id="link-info" hidden>
+      <label class="form-pull" for="">Data</label>
+      <input data="commit" type="date" name="date">
+      <label class="form-pull" for="">Endereço:</label>
+      <input data="commit" size='30' type="text" name="address">
 
-  <label for="">url:</label>
-  <input type="text" name="url">
+      <label class="form-pull">Coordinates</label>
+      <input data="commit" type="text" name="latitude" placeholder="latitude">
+      <input data="commit" type="text" name="longitude" placeholder="longitude">
+    </div>
 
-  <label for="">Description:</label>
-  <input type="text" name="description">
+    <button class="btn-pull-add" type="submit">ADD</button>
+  </form>
 
-  <button type="submit">ADD</button>
-</form>
-
-<br>
-<hr>
-
-{{#each arrCommit}}
-<div>
-  <p> {{this.url}} | {{this.description}} </p>
+  <br>
+  <hr>
 </div>
-<form action="/user/{{this.id}}/delete" method="post">
-  <button type="submit">delete</button>
-</form>
-<a href="/user/{{this.id}}/edit">
-  <button type="submit">edit</button>
-</a>
-{{/each}}
+<div class='pending-pull-user'>
+  <h3 class="title-add-pull">Histórico</h3>
+  <p class="title-add-pull-p">(Edite ou delete seus commits pendentes)</p>
+  {{#each arrCommit}}
+  <div class='peding-edit'>
+    <div class="peding-datas">
+      <p> {{this.url}} | {{this.description}} </p>
+    </div>
+    <form action="/user/{{this.id}}/delete" method="post">
+      <button class="peding-edit-del" type="submit"><img class='pendig-icon-del' src="/images/delete-button.png"
+          alt="Deletar" width="20px"></button>
+    </form>
+    <a href="/user/{{this.id}}/edit">
+      <img class="peding-edit-del" src='/images/pencil.png' alt="Postar" width="20px">
+    </a>
+  </div>
+  {{/each}}
+</div>

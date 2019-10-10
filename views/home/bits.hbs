@@ -1,4 +1,6 @@
-
+<div class="container-bits">
+  {{#if isAdm}}
+  {{#each commit}}
   <div class="col-sm-3 card-ysc">
     <a href="{{this.url}}">
       <img class="img-ysc" src="{{this.imgPath}}" alt=""></a>
@@ -6,11 +8,11 @@
       <h6 class="card-text">{{this.description}}</h6>
       {{#if this.anonymous}}
       <div class="card-postado">
-        <p class="card-text-post"> postado por Anonimo</p>
+        <p class="card-text-post-bits"> postado por Anonimo</p>
       </div>
       {{else}}
       <div class="card-postado">
-        <p class="card-text-post"> postado por {{this.owner.username}}</p>
+        <p class="card-text-post-bits"> postado por {{this.owner.username}}</p>
       </div>
       {{/if}}
     </div>
@@ -30,7 +32,7 @@
 {{else}}
 
 
-<div class="container-ysc">
+<div class="container-bits">
   {{#each commit}}
   <div class="col-sm-3 card-ysc">
     <a href="{{this.url}}">
@@ -39,11 +41,11 @@
       <h6 class="card-text">{{this.description}}</h6>
       {{#if this.anonymous}}
       <div class="card-postado">
-        <p class="card-text-post"> postado por Anonimo</p>
+        <p class="card-text-post-bits"> postado por Anonimo</p>
       </div>
       {{else}}
       <div class="card-postado">
-        <p class="card-text-post"> postado por {{this.owner.username}}</p>
+        <p class="card-text-post-bits"> postado por {{this.owner.username}}</p>
       </div>
       {{/if}}
     </div>
