@@ -528,3 +528,11 @@ input[data="commit"] {
   border: none;
   color: white;
 }
+
+.edit-commit {
+  background-color:
+    #a65279;
+  height: 100vh;
+  padding-top: 50px;
+  text-align: center;
+}
