@@ -16,7 +16,7 @@ const User = require('./models/user');
 const flash = require('connect-flash');
 
 mongoose
-  .connect('mongodb://localhost/xxTech', {
+  .connect(process.env.MONGODB_URI, {
     useNewUrlParser: true
   })
   .then(x => {
@@ -48,6 +48,7 @@ app.use(cookieParser());
 app.use(
   session({
     secret: 'woman',
+    cookie: {maxAge: 1200000},
     resave: true,
     saveUninitialized: true
   })
@@ -98,10 +99,11 @@ passport.use(
     {
       clientID: process.env.GITHUB_CLIENT_ID,
       clientSecret: process.env.GITHUB_CLIENT_SECRET,
-      callbackURL: 'http://127.0.0.1:3000/auth/github/callback'
+      callbackURL: process.env.GITHUB_CLIENT_URI
     },
     function(accessToken, refreshToken, profile, cb) {
-      User.findOrCreate({githubId: profile.id}, function(err, user) {
+      // console.log(profile)
+      User.findOrCreate({githubID: profile.id, username : profile.displayName}, function(err, user) {
         return cb(err, user);
       });
     }

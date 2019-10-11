@@ -3,12 +3,16 @@ const Schema = mongoose.Schema;
 
 const commitSchema = new Schema(
   {
+    title: String,
     url: String,
-    description: String,
+    // category: {type: String, enum:['yes', 'bits']},
+    category: String,
+    description: {type: String, text: true},
     owner: {type: Schema.Types.ObjectId, ref: 'User'},
     anonymous: String,
     post: {type: Boolean, default: false},
-    imgPath: String
+    imgPath: String,
+    imgName: String
   },
   {
     timestamps: true

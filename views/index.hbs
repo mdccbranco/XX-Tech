@@ -1,93 +1,186 @@
-<!-- Modal -->
-<div class="modal fade" id="elegantModalForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <!--Content-->
-    <div class="modal-content form-elegant">
-      <!--Header-->
-      <div class="modal-header text-center">
-        <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="myModalLabel"><strong>Login</strong></h3>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <!--Body-->
-      <div class="modal-body mx-4">
-        <!--Body-->
-        <form action='/login' method="POST">
-          <div class="md-form mb-5">
-            <input id="Form-login" class="form-control" name="username">
-            <label data-error="wrong" data-success="right" for="Form-login">Your username</label>
-          </div>
-
-          <div class="md-form pb-3">
-            <input type="password" id="Form-pass1" class="form-control" name="password">
-            <label data-error="wrong" data-success="right" for="Form-pass1">Your password</label>
-          </div>
-
-          <div class="text-center mb-3">
-            <button type="submit" class="btn blue-gradient btn-block btn-rounded z-depth-1a">Login</button>
-          </div>
-        </form>
-        
-        <p class="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2"> or Sign in
-          with:</p>
-
-        <div class="row my-3 d-flex justify-content-center">
-          <!--Facebook-->
-          <button type="button" class="btn btn-white btn-rounded mr-md-3 z-depth-1a icon"><img
-              src="/images/github-icon.png" class="fab text-center" width="20px"></i></button>
-          <!--Twitter-->
-          <button type="button" class="btn btn-white btn-rounded mr-md-3 z-depth-1a"><i
-              class="fab fa-twitter"></i></button>
-          <!--Google +-->
-          <button type="button" class="btn btn-white btn-rounded z-depth-1a"><i
-              class="fab fa-google-plus-g"></i></button>
-        </div>
-      </div>
-      <!--Footer-->
-      <div class="modal-footer mx-5 pt-3 mb-1">
-        <p class="font-small grey-text d-flex justify-content-end">Not a member? <a href="#" class="blue-text ml-1">
-            Sign Up</a></p>
-      </div>
-    </div>
-    <!--/.Content-->
-  </div>
-</div>
-<!-- Modal -->
-
-<div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Sign up</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <i class="fas fa-user prefix grey-text"></i>
-          <input type="text" id="orangeForm-name" class="form-control validate">
-          <label data-error="wrong" data-success="right" for="orangeForm-name">Your name</label>
-        </div>
-        <div class="md-form mb-5">
-          <i class="fas fa-envelope prefix grey-text"></i>
-          <input type="email" id="orangeForm-email" class="form-control validate">
-          <label data-error="wrong" data-success="right" for="orangeForm-email">Your email</label>
-        </div>
-
-        <div class="md-form mb-4">
-          <i class="fas fa-lock prefix grey-text"></i>
-          <input type="password" id="orangeForm-pass" class="form-control validate">
-          <label data-error="wrong" data-success="right" for="orangeForm-pass">Your password</label>
-        </div>
-
-      </div>
-      <div class="modal-footer d-flex justify-content-center">
-        <button class="btn btn-deep-orange">Sign up</button>
+<section class="MainContainer">
+  <div class='containerParalax'>
+    <div class="ParallaxContainer"></div>
+    <div class='inspirationText'>
+      <h2 class="quote">
+        “Devemos entender que culturalmente, nas áreas técnicas, bloqueamos mulheres e exaltamos homens, isso precisa
+        ser mudado”
+      </h2>
+      <div>
+        <a href="/inpiration-bits"><button class="btnB btn_style">Inspiration Bits</button></a>
       </div>
     </div>
   </div>
-</div>
+
+  <div class="ContentContainer-inspirations">
+    <div class="Content-inspirations row">
+      <div class="info-inspirations col-sm-4">
+        <div class="icon-img">
+          <img src="images/ada-lovelace-icon.png">
+        </div>
+        <div class="icon-text">
+          <p>
+            <strong>Ada Lovelace (1815 – 1852)</strong> foi uma matemática e escritora inglesa considerada a primeira
+            programadora da história!
+
+            Ada foi a pessoa a escrever o primeiro algoritmo a ser reconhecido por
+            uma máquina. Esse algoritmo permitia à máquina computar os valores de funções matemáticas assim como
+            publicar uma coleção de notas sobre a máquina analítica.
+            <br>
+            <br>
+            <strong><span> <i>“Quanto mais eu estudo, mais insaciável eu sinto meu gênio ser.”</i></span></strong>
+          </p>
+        </div>
+      </div>
+
+      <div class="info-inspirations col-sm-4">
+        <div class="icon-img">
+          <img src="images/grace-hopper.png">
+        </div>
+        <div class="icon-text">
+          <p>
+            <strong>Grace Hopper (1906 – 1992) </strong>. Os feitos da contra-almirante contra-almirante, analista de
+            sistemas
+            da marinha americana, revolucionaram a
+            computação por décadas. Seu trabalho foi pioneiro ao programar o primeiro computador digital de larga escala
+            e por criar o primeiro compilador. Um compilador é um programa de sistema que traduz um programa com
+            linguagem de alto nível para um equivalente em código de máquina para um processador. Foi esse último que
+            abriu caminho para a primeira linguagem de programação que não exigia um grande conhecimento matemático.
+            <br>
+            <br>
+            <strong><span><i>“A frase mais perigosa é: Nós sempre fizemos assim.”</i></span></strong>
+          </p>
+        </div>
+      </div>
+
+      <div class="info-inspirations  col-sm-4">
+        <div class="icon-img">
+          <img src="images/marie-curie.png">
+        </div>
+        <div class="icon-text">
+          <p>
+            <strong> Marie Curie (1897 – 1934) </strong> brilhante cientista polonesa, se formou no ensino médio aos 15
+            anos, mas não foi admitida na faculdade pois nesta época não se aceitavam
+            mulheres, então, se mudou para Paris para estudar física em Sorbonne.
+
+            Nos estudos sobre radioatividade ela e seu marido, Pierre, descobriram os elementos rádio e polônio. Em 1903
+            dividiu o prêmio Nobel de Física com o marido. Em 1911 ganhou o prêmio Nobel de Química pela descoberta dos
+            elementos.
+            <br>
+            <br>
+            <strong><span><i>“Na vida não há nada a se temer, apenas a ser compreendido.”</i></span></strong>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="ContentContainer-yesSheCan ">
+    <h2> <a class="title-yesSheCan" href="yes-she-can"> Yes, she can! </a></h2>
+
+    <div class="Content-yes">
+
+      <div class="card-yes col-sm-3">
+        <img class="img-home" src="{{yes.0.imgPath}}" alt="Imagem de capa do card">
+        <div class="card-body">
+          <h6 class="card-text-home">{{yes.0.description}}</h6>
+        </div>
+      </div>
+
+      <div class="card-yes col-sm-3">
+        <img class="img-home" src="{{yes.1.imgPath}}" alt="Imagem de capa do card">
+        <div class="card-body">
+          <h6 class="card-text-home">{{yes.1.description}}</h6>
+        </div>
+      </div>
+
+      <div class="card-yes col-sm-3">
+        <img class="img-home" src="{{yes.2.imgPath}}" alt="Imagem de capa do card">
+        <div class="card-body">
+          <h6 class="card-text-home">{{yes.2.description}}</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{!-- <div class="ContentContainer-linking">
+    <h2> <a class="title-linking" href="linking-women"> Linking women </a></h2>
+    <div class="content-linking">
+      <div class="card-linking col-sm-4">
+        <img class="card-img-top" src=".../100px180/?text=Image cap" alt="Imagem de capa do card">
+        <div class="card-body">
+          <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo
+            do card.</p>
+        </div>
+      </div>
+
+      <div class="card-linking col-sm-4">
+        <img class="card-img-top" src=".../100px180/?text=Image cap" alt="Imagem de capa do card">
+        <div class="card-body">
+          <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo
+            do card.</p>
+        </div>
+      </div>
+
+      <div class="card-linking col-sm-4">
+        <img class="card-img-top" src=".../100px180/?text=Image cap" alt="Imagem de capa do card">
+        <div class="card-body">
+          <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo
+            do card.</p>
+        </div>
+      </div>
+    </div>
+  </div> --}}
+  <section class='ContentContainer-girl-in-formation'>
+    <div>
+      <h2 id='gif' class="textGif"> Girl In Formation</h2>
+    </div>
+    <div class="Content-inspirations row">
+      <div class='gif-course col-sm-3'>
+        <div>
+          <a class="icon-img-gif" href='https://www.ironhack.com/br'> <img src="images/ironhack.png"></a>
+        </div>
+        <div class="icon-text-gif">
+          <p>O melhor Bootcamp do mundo, possui cursos de Web Development, UX/UI Design e Data Analytics e <b>oferece
+              bolsas de estudo de 10% para mulheres.</b> 😍 </p>
+        </div>
+      </div>
+      <div class='gif-course col-sm-3'>
+        <div>
+          <a class="icon-img-gif" href="https://www.programaria.org/cursos/euprogramo/"><img
+              src="images/programaria.png"></a>
+        </div>
+        <div class="icon-text-gif">
+          <p>Projeto para empoderar meninas e mulheres por meio da tecnologia, além de um meta-site sobre o tema,
+            oferecem cursos para as pessoas que se identificam com o gênero feminino e querem aprender a programar.</p>
+        </div>
+      </div>
+      <div class='gif-course col-sm-3'>
+        <div>
+          <a class="icon-img-gif" href="http://www.fablablivresp.prefeitura.sp.gov.br/"> <img
+              src="images/fablab-logo.jpg"> </a>
+        </div>
+        <div class="icon-text-gif">
+          <p>O FabLabLivre SP é um ambiente aberto e gratuito para prototipagem e, além de ter grupos de estudos para
+            mulheres, oferece cursos voltados ao ensino de marcenaria, robotica e outras tecnologias para mulheres.</p>
+        </div>
+      </div>
+      <div class='gif-course col-sm-3'>
+        <div>
+          <a class="icon-img-gif" href="https://reprograma.com.br/"><img src="images/reprograma.jpeg"></a>
+        </div>
+        <div class="icon-text-gif">
+          <p>"A {reprograma} ensina programação para mulheres cis e trans que não têm recursos e/ou oportunidades para
+            aprender a programar."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <footer width=" 100vw">
+      <p class="footer-email"><img src="/images/email.png" height="25px">contato.xxtech@gmail.com </p>
+      <div class="footer-devs"> Desenvolvido por <a class='devs' href="https://github.com/mdccbranco">Mônica</a> &
+        <a class='devs' href="https://github.com/grazidiandra">Grazi</a></div>
+    </footer>
+  </section>

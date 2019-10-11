@@ -1,16 +1,22 @@
-<form action="/login" method="POST">
-  <div>
-    <label for="username">Username:</label>
-    <input type="text" name="username">
+<div class="auth-login-signup">
+  <div class="bcg-auth">
+
+    <h4 class="login-auth">LOGIN</h4>
+    <form action="/login" method="POST">
+      <div>
+        <label for="username">Username:</label>
+        <input data="commit" type="text" name="username">
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input data="commit" type="password" name="password">
+      </div>
+      <div>
+        <button class="btn-auth" type="submit">Login</button>
+      </div>
+    </form>
+    <br>
+    <a href="/auth/github"><button class="btn-auth-social">Login with Github</button></a>
+
   </div>
-  <div>
-    <label for="password">Password:</label>
-    <input type="password" name="password">
-  </div>
-  <div>
-    <button type="submit">login</button>
-  </div>
-</form>
-<br>
-<br>
-<a href="/auth/github"><button>Login with Github</button></a>
+</div>

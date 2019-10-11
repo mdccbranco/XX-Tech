@@ -14,21 +14,21 @@ function checkRoles(role) {
 }
 
 userRouter.get('/commit', checkRoles('user'), (req, res, next) => {
-  Commit.find()
+  const {id} = req.user;
+  Commit.find({$and: [{owner: id}, {post: false}]})
     .populate('owner')
     .then(arrCommit => {
-      console.log(arrCommit);
-      res.render('user/commit', {arrCommit: arrCommit, user: req.user});
+      res.render('user/commit', {arrCommit, user: req.user});
     })
     .catch(err => console.log(`error: ${err}`));
 });
 
 userRouter.post('/commit', checkRoles('user'), (req, res, next) => {
-  const {url, description, owner, anonymous} = req.body;
-  const addCommit = new Commit({url, description, owner, anonymous});
+  const {url,category, description, owner, anonymous} = req.body;
+  const addCommit = new Commit({url,category, description, owner, anonymous});
   addCommit
     .save()
-    .then(() => {
+    .then((data) => {
       res.redirect('/user/commit');
     })
     .catch(error => {
@@ -49,7 +49,7 @@ userRouter.post('/:id/delete', checkRoles('user'), (req, res, next) => {
 userRouter.get('/:id/edit', (req, res, next) => {
   Commit.findById(req.params.id)
     .then(commit => {
-      res.render('user/edit', {commit});
+      res.render('user/edit', {commit, user: req.user});
     })
     .catch(error => {
       console.log('Error in edit: ', error);
@@ -69,7 +69,7 @@ userRouter.post('/:id', (req, res, next) => {
 
 userRouter.get('/logout', (req, res) => {
   req.logout();
-  res.redirect('/login');
+  res.redirect('/');
 });
 
 module.exports = userRouter;

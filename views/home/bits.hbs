@@ -1,0 +1,67 @@
+<div class="container-bits-home">
+  <h1 class="bits-text-h1"> Information Bits</h1>
+  <p class="text-chamada">Inspire-se em grandes mulheres!</p>
+  <hr class="hr-search">
+  <form class='form-search' action='/inspiration-bits/search' method='post'>
+    <input size='80' data="commit" name='search' placeholder='Search'>
+    <button class="btn-search" type='submit'> Search </button>
+  </form>
+  <div class="container-bits">
+    {{#if isAdm}}
+    {{#each commit}}
+    <div class="col-sm-3 card-ysc">
+      <a href="{{this.url}}">
+        <img class="img-ysc" src="{{this.imgPath}}" alt=""></a>
+      <div class="card-body">
+        <h6 class="card-text">{{this.description}}</h6>
+        {{#if this.anonymous}}
+        <div class="card-postado">
+          <p class="card-text-post-bits"> postado por Anonimo</p>
+        </div>
+        {{else}}
+        <div class="card-postado">
+          <p class="card-text-post-bits"> postado por {{this.owner.username}}</p>
+        </div>
+        {{/if}}
+      </div>
+    </div>
+    <div class="container-ysc-commit">
+      <form action="/adm/{{this.id}}/delete" method="post">
+        <button class='icon-del' type="submit"><img src='/images/delete-button.png' width="20px"></button>
+      </form>
+      <form action="/adm/{{this.id}}/post/edit" method="get">
+        <button class='icon-edit' type="submit"><img src='/images/pencil.png' width="20px"></button>
+      </form>
+    </div>
+    {{/each}}
+  </div>
+</div>
+
+
+{{else}}
+
+
+<div class="container-bits">
+  {{#unless commit}}
+  <p class='no-results'>Nenhum resultado foi encontrado.</p>
+  {{/unless}}
+  {{#each commit}}
+  <div class="col-sm-3 card-ysc">
+    <a href="{{this.url}}">
+      <img class="card-img-top img-ysc" src="{{this.imgPath}}" alt=""></a>
+    <div class="card-body">
+      <h6 class="card-text">{{this.description}}</h6>
+      {{#if this.anonymous}}
+      <div class="card-postado">
+        <p class="card-text-post-bits"> postado por Anonimo</p>
+      </div>
+      {{else}}
+      <div class="card-postado">
+        <p class="card-text-post-bits"> postado por {{this.owner.username}}</p>
+      </div>
+      {{/if}}
+    </div>
+  </div>
+  {{/each}}
+</div>
+{{/if}}

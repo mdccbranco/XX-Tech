@@ -1,33 +1,809 @@
-*{
+@import url('https://fonts.googleapis.com/css?family=Dosis:400,700&display=swap');
+
+* {
   margin: 0;
   padding: 0;
 }
 
 .form-elegant .font-small {
-  font-size: 0.8rem; }
+  font-size: 0.8rem;
+}
 
 .form-elegant .z-depth-1a {
   -webkit-box-shadow: 0 2px 5px 0 rgba(55, 161, 255, 0.26), 0 4px 12px 0 rgba(121, 155, 254, 0.25);
-  box-shadow: 0 2px 5px 0 rgba(55, 161, 255, 0.26), 0 4px 12px 0 rgba(121, 155, 254, 0.25); }
+  box-shadow: 0 2px 5px 0 rgba(55, 161, 255, 0.26), 0 4px 12px 0 rgba(121, 155, 254, 0.25);
+}
 
 .form-elegant .z-depth-1-half,
 .form-elegant .btn:hover {
   -webkit-box-shadow: 0 5px 11px 0 rgba(85, 182, 255, 0.28), 0 4px 15px 0 rgba(36, 133, 255, 0.15);
-  box-shadow: 0 5px 11px 0 rgba(85, 182, 255, 0.28), 0 4px 15px 0 rgba(36, 133, 255, 0.15); }
-
-.form-elegant .modal-header {
-  border-bottom: none; }
-
-.modal-dialog .form-elegant .btn .fab {
-  color: #2196f3!important; }
-
-.form-elegant .modal-body, .form-elegant .modal-footer {
-  font-weight: 400; }
-
-#navbarTogglerDemo02{
-  width: 50%;
+  box-shadow: 0 5px 11px 0 rgba(85, 182, 255, 0.28), 0 4px 15px 0 rgba(36, 133, 255, 0.15);
 }
 
-.icon{
-    ;
+.form-elegant .modal-header {
+  border-bottom: none;
+}
+
+.modal-dialog .form-elegant .btn .fab {
+  color: #2196f3 !important;
+}
+
+.form-elegant .modal-body,
+.form-elegant .modal-footer {
+  font-weight: 400;
+}
+
+.navbarInfo {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: center;
+  padding: 0px 20px;
+}
+
+
+.infos {
+  display: flex;
+  align-items: center;
+  flex-grow: 0 !important
+}
+
+.nav-link {
+  font-family: 'Dosis', sans-serif;
+  font-size: 20px;
+}
+
+
+.auth {
+  color: #a65279;
+  padding: none;
+  font-weight: bold;
+  font-family: 'Dosis', sans-serif;
+  font-size: 20px;
+}
+
+.MainContainer {
+  perspective: 1px;
+  transform-style: preserve-3d;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+
+.ParallaxContainer {
+  position: relative;
+  z-index: -1;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  transform: translateZ(-1px) scale(2);
+  background: url('../images/background.jpg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  background-color: #F49B96;
+  color: white;
+}
+
+.containerParalax {
+  position: relative;
+  text-align: center;
+}
+
+.inspirationText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.quote {
+  color: white;
+  text-align: center;
+  text-shadow: 1.5px 1px gray;
+  font-style: italic;
+
+}
+
+.btnB {
+  background-color: transparent;
+  border-radius: 0.6em;
+  padding: 0.5em 1.5em;
+}
+
+.btn_style {
+  border-color: #a65279;
+  color: #fff;
+  box-shadow: 0 0 20px 20px #a65279 inset, 0 0 0 0 #a65279;
+  transition: all 150ms ease-in-out;
+  background: #a65279;
+
+}
+
+.btn_style:hover {
+  box-shadow: 0 0 10px 0 #a65279 inset, 0 0 10px 4px #a65279;
+}
+
+
+.MainContainer {
+  perspective: 1px;
+  transform-style: preserve-3d;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.ContentContainer-inspirations {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  background-color: #F0DCD7;
+  z-index: 1;
+  padding: 75px;
+  min-height: 90vh;
+}
+
+
+.destaque-about-info {
+  color: white;
+  font-family: 'Dosis', sans-serif;
+  font-weight: 700;
+}
+
+.quem-somos {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #a65279;
+  z-index: 1;
+  padding: 75px;
+  min-height: 50vh;
+  font-family: 'Dosis', sans-serif;
+  font-size: 18px;
+  color: #e6c4d3;
+}
+
+.cenario-atual {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #35597b;
+  z-index: 1;
+  padding: 75px;
+  min-height: 50vh;
+  color: #8dafcf;
+  font-family: 'Dosis', sans-serif;
+  font-size: 18px;
+}
+
+.about-info {}
+
+.Content-inspirations {
+  display: flex;
+  flex-direction: row;
+}
+
+
+
+.ContentContainer-linking {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  padding: 100px 50px 0px 50px;
+  min-height: 70vh;
+
+}
+
+.content-linking {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+}
+
+.card-linking {
+  margin: 0px 10px;
+}
+
+.title-linking {
+  color: #4E567D;
+  font-family: 'Dosis', sans-serif;
+  font-size: 18px;
+}
+
+.title-linking:hover {
+  text-decoration: none;
+  color: #8573a0;
+}
+
+.ContentContainer-yesSheCan {
+  display: block;
+  background-color: #f8f9fa;
+  z-index: 1;
+  padding: 75px;
+  height: 80vh;
+  padding: 100px 50px;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Dosis', sans-serif;
+}
+
+
+.Content-yes {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+.card-yes {
+  margin: 0px 10px;
+}
+
+.title-yesSheCan {
+  color: #a65279;
+}
+
+.title-yesSheCan:hover {
+  text-decoration: none;
+  color: #F49B96;
+}
+
+
+.icon-img>img {
+  width: 60%;
+  margin-left: 15%;
+  border: 5px solid #a65279;
+  border-radius: 40%;
+  margin-bottom: 32px;
+  background-color: white;
+}
+
+.icon-img-gif>img {
+  width: 70%;
+  margin-left: 15%;
+  border: 5px solid white;
+  border-radius: 30%;
+  margin-bottom: 32px;
+  background-color: white;
+}
+
+.ContentContainer-girl-in-formation {
+  display: block;
+  background-color: #a65279;
+  z-index: 1;
+  padding: 75px;
+  min-height: 80vh;
+  padding: 100px 50px;
+}
+
+.textGif {
+  color: #f8f9fa;
+  padding-bottom: 50px;
+  padding-top: 20px;
+  font-family: 'Dosis', sans-serif;
+}
+
+.icon-text>p {
+  text-align: center;
+  padding: 10px 50px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 18px;
+}
+
+.icon-text-gif>p {
+  text-align: center;
+  padding: 10px 50px;
+  font-family: 'Dosis', sans-serif;
+  color: white;
+  font-size: 18px;
+}
+
+h2 {
+  margin-top: -50px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+footer {
+  height: 50px;
+  width: 100%;
+  background-color: #f8f9fa;
+  color: #4E567D;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  position: relative;
+  font-size: 16px;
+  font-family: 'Dosis', sans-serif;
+}
+
+.footer-email {
+  margin-bottom: 2px;
+}
+
+.devs {
+  font-size: 18px;
+  color: #a65279;
+  font-family: 'Dosis', sans-serif;
+}
+
+.devs:hover {
+  color: #F49B96;
+  text-decoration: none;
+}
+
+.card-text-home {
+  color: #a65279;
+  text-align: center;
+  font-family: 'Dosis', sans-serif;
+  font-size: 18px;
+}
+
+.card-text {
+  color: white;
+  text-align: center;
+  font-family: 'Dosis', sans-serif;
+  font-size: 18px;
+}
+
+.card-text-post {
+  color: #08467e;
+  padding: 0px 10px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 18px;
+}
+
+.card-text-post-bits {
+  color: #ac0d56;
+  padding: 0px 10px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 18px;
+}
+
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+}
+
+.card-postado {
+  display: flex;
+  align-self: flex-end;
+  justify-content: flex-end;
+}
+
+.img-ysc {
+  width: 100%;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.img-home {
+  width: 300px;
+  height: 200px;
+  border-radius: 10px;
+  border-radius: 10px;
+}
+
+.card-ysc {
+  border: 1px solid white;
+  border-radius: 10px;
+  box-shadow: 0px 5px 5px 0px;
+  margin: 2%;
+  background-color: rgba(255, 255, 255, 0.20);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20%;
+  height: 350px;
+  padding: 0px !important;
+}
+
+.container-ysc {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+
+}
+
+.container-ysc-home {
+  background-color: #355a7b;
+  min-height: 100vh;
+}
+
+.ysc-text-h1 {
+  padding-left: 50px;
+  padding-top: 50px;
+  color: white;
+  font-family: 'Dosis', sans-serif;
+}
+
+.container-bits {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+
+}
+
+.container-bits-home {
+  background-color: #a65279;
+  min-height: 100vh;
+}
+
+.bits-text-h1 {
+  padding-left: 50px;
+  padding-top: 50px;
+  color: white;
+  font-family: 'Dosis', sans-serif;
+}
+
+.icon-del {
+  background-color: rgba(255, 255, 255, 0.20);
+  border-color: rgba(255, 255, 255, 0.50);
+  border-top-right-radius: 10px;
+  padding: 2px;
+}
+
+.icon-edit {
+  background-color: rgba(255, 255, 255, 0.20);
+  border-color: rgba(255, 255, 255, 0.50);
+  border-bottom-right-radius: 10px;
+  padding: 2px;
+}
+
+
+.container-ysc-commit {
+  margin-top: 40px;
+  margin-left: -30px;
+}
+
+.logger {
+  background-color:
+    #b6e4e1;
+  min-height: 30px;
+  color: #50577e;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  font-family: 'Dosis', sans-serif;
+  font-size: 20px;
+
+}
+
+.btnAuth {
+  color: #a65279;
+  margin-left: 10px;
+}
+
+.btnAuth:hover {
+  text-decoration: none;
+  color: #76B5B0;
+}
+
+.about-us {
+  background-color:
+    #355a7b;
+  display: block;
+  z-index: 1;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-info {
+  border-radius: 100px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 600px;
+  text-align: justify;
+}
+
+.add-pull {
+  background-color:
+    #355a7b;
+  padding-top: 50px;
+  text-align: center;
+}
+
+.pending-pull {
+  background-color:
+    #355a7b;
+  text-align: center;
+  padding-top: 50px;
+  min-height: 50vh;
+}
+
+.title-add-pull {
+  color: white;
+  font-family: 'Dosis', sans-serif;
+  font-size: 50px;
+}
+
+.title-add-pull-p {
+  color: white;
+  padding-bottom: 30px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 18px;
+}
+
+.form-pull {
+  color: white;
+  padding-right: 10px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 18px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 18px;
+}
+
+.form-pull-category {
+  color: white;
+  padding-right: 10px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 18px;
+}
+
+
+.form-pull-url {
+  color: white;
+  padding-right: 20px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 18px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 18px;
+}
+
+input[data="commit"] {
+  border: 0.5px solid white;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.50);
+  color: white;
+}
+
+.btn-pull-add {
+  background-color: rgba(255, 255, 255, 0.50);
+  border-radius: 10px;
+  width: 80px;
+  margin-top: 20px;
+  padding: 3px;
+  color: white;
+  font-size: 14px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 18px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 18px;
+}
+
+.peding-edit {
+  display: flex;
+  justify-content: center;
+  color: white;
+  padding: 5px 100px;
+}
+
+.peding-edit-del {
+  border: 1px solid white;
+  margin-left: 10px;
+  padding: 2px;
+  height: 28px;
+  width: 28px;
+  background-color: rgba(255, 255, 255, 0.50);
+  border-radius: 5px;
+}
+
+.pendig-icon-del {
+  vertical-align: baseline !important
+}
+
+.post-pull {
+  background-color: #355a7b;
+  height: 100vh;
+  padding-top: 100px;
+  text-align: center;
+}
+
+.title-post-pull-p {
+  color: white;
+  padding-bottom: 30px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 20px;
+}
+
+.title-post-pull {
+  color: white;
+  font-family: 'Dosis', sans-serif;
+  font-size: 50px;
+}
+
+.style-posts {
+  font-family: 'Dosis', sans-serif;
+  font-size: 18px;
+}
+
+.sub-post {
+  font-family: 'Dosis', sans-serif;
+  font-size: 26px;
+}
+
+.form-post-category {
+  color: white;
+}
+
+.infos-pull {
+  padding-bottom: 15px;
+}
+
+.infos-pull-url {
+  padding-bottom: 10px;
+}
+
+.btn-pull-adm {
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+
+.btn-pull {
+  padding-top: 15px;
+}
+
+.edit-commit {
+  background-color:
+    #a65279;
+  height: 100vh;
+  padding-top: 50px;
+  text-align: center;
+  color: white;
+}
+
+.add-pull-user {
+  background-color:
+    #a65279;
+  padding-top: 50px;
+  text-align: center;
+}
+
+.pending-pull-user {
+  background-color:
+    #a65279;
+  text-align: center;
+  padding-top: 50px;
+  min-height: 50vh;
+}
+
+.auth-login-signup {
+  background-color:
+    #a65279;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding-bottom: 100px;
+  color: white;
+  font-family: 'Dosis', sans-serif;
+}
+
+.login-auth {
+  padding-bottom: 20px;
+  padding-top: 30px;
+}
+
+.bcg-auth {
+  height: 300px;
+  width: 400px;
+  background-color: rgba(255, 255, 255, 0.10);
+  border: 0.5px solid white;
+  border-radius: 10px;
+  font-family: 'Dosis', sans-serif;
+}
+
+.btn-auth-social {
+  background-color: rgba(255, 255, 255, 0.50);
+  border-radius: 10px;
+  border: 1px solid white;
+  width: 150px;
+  padding: 3px;
+  color: white;
+  font-size: 14px;
+  font-family: 'Dosis', sans-serif;
+}
+
+.btn-auth-social-login {
+  background-color: rgba(255, 255, 255, 0.50);
+  border-radius: 10px;
+  border: 1px solid white;
+  width: 30px;
+  padding: 3px;
+  color: white;
+  font-size: 14px;
+  font-family: 'Dosis', sans-serif;
+}
+
+.btn-auth-social-login:hover {
+  text-decoration: none;
+  color: #a65279;
+}
+
+.account-message {
+  margin-top: 10px;
+}
+
+.btn-auth {
+  background-color: rgba(255, 255, 255, 0.50);
+  border-radius: 10px;
+  border: 1px solid white;
+  width: 150px;
+  padding: 3px;
+  color: white;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.no-results {
+  color: white;
+}
+
+.btn-search {
+  background-color: rgba(255, 255, 255, 0.50);
+  border-radius: 10px;
+  width: 80px;
+  padding: 3px;
+  color: white;
+  font-size: 14px;
+  font-family: 'Dosis', sans-serif;
+}
+
+.text-chamada {
+  font-size: 18px;
+  font-family: 'Dosis', sans-serif;
+  color: white;
+  padding-left: 55px;
+}
+
+.form-search {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.hr-search {
+  border-color: white;
+}
+
+::-webkit-input-placeholder {
+  color: white;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: white;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: white;
+}
+
+:-ms-input-placeholder {
+  color: white;
 }
