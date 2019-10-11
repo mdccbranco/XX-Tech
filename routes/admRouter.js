@@ -28,7 +28,6 @@ admRouter.get('/pull', checkRoles('adm'), (req, res, next) => {
 });
 
 admRouter.post('/commit', checkRoles('adm'), (req, res, next) => {
-  console.log('req', req.body);
   let location = {
     type: 'Point',
     coordinates: [req.body.longitude, req.body.latitude]
@@ -59,7 +58,6 @@ admRouter.post('/commit', checkRoles('adm'), (req, res, next) => {
     addEvent
       .save()
       .then(data => {
-        console.log('data', data);
         res.redirect('/adm/pull');
       })
       .catch(error => {
@@ -182,7 +180,6 @@ admRouter.post('/:id/post', uploadCloud.single('photo'), (req, res, next) => {
       }
     })
       .then( (data) => {
-        console.log(data);
       Commit.updateOne({
         _id: data._id
       }, {
