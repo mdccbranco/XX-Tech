@@ -12,7 +12,12 @@ authRoutes.get('/signup', (req, res, next) => {
 });
 
 authRoutes.post('/signup', (req, res, next) => {
-  const {username, password, role, email} = req.body;
+  const {
+    username,
+    password,
+    role,
+    email
+  } = req.body;
 
   if (username === '' || password === '') {
     res.render('auth/signup', {
@@ -22,8 +27,8 @@ authRoutes.post('/signup', (req, res, next) => {
   }
 
   User.findOne({
-    username
-  })
+      username
+    })
     .then(user => {
       if (user !== null) {
         res.render('auth/signup', {
@@ -56,6 +61,9 @@ authRoutes.post('/signup', (req, res, next) => {
               pass: process.env.EMAIL_SECRET
             }
           });
+          let emailMessage = ' <div> <p style="color:#ac0d56;"><b>Oi ';
+          emailMessage += newUser.username;
+          emailMessage += '!</b></p><p style="color:#ac0d56;">É com muita alegria que damos as boas vindas a você. Nós da XX-Tech sabemos que mulher e tecnologia tem tudo a ver, por isso, criamos um portal onde todos podem contribuir pra incentivar a entrada e a manutenção de mulheres em trabalhos relacionados às áreas de engenharia, informática e demais áreas exatas.</p><p>Você é muito importante para que a nossa corrente alcance o seu objetivo.</p><b>A partir de agora você pode sugerir conteúdo para o portal. Para isso, basta: </b> <ul> <li>Fazer o Login</li><li>Clicar no botao "commit to us" </li><li>Adicionar o link da notícia que deseja compartilhar com o título da matéria. </li></ul> <p>Nossa equipe irá ler e adicionar a notícia ao portal. Enquanto a postagem não estiver online, você pode editar como quiser a sua postagem.</p><div style="text-align:center"> Muito obrigada pela sua colaboração.<br>Abraços!<br>XX-Tech<br></div></div>';
           transporter
             .sendMail({
               from: 'XX-TECH <contato.xxtech@gmail.com>',
@@ -63,7 +71,7 @@ authRoutes.post('/signup', (req, res, next) => {
               to: newUser.email,
               subject: 'Seja bem vindo ao XX-Tech',
               // text: 'message',
-              html: `<b>Obrigada por se inscrever no XX Tech.</b><br> Estamos muito felizes com a sua presença, a partir de agora voce pode logar no nosso site e sugerir conteúdo relacionado a presença feminina no mercado de trabalho das exatas e tecnologias.`
+              html: emailMessage
             })
             .then(info => res.redirect('/'))
             .catch(error => console.log(error));
