@@ -102,7 +102,7 @@ passport.use(
       callbackURL: process.env.GITHUB_CLIENT_URI
     },
     function(accessToken, refreshToken, profile, cb) {
-      User.findOrCreate({githubId: profile.id}, function(err, user) {
+      User.findOrCreate({githubID: profile.id}, function(err, user) {
         return cb(err, user);
       });
     }
