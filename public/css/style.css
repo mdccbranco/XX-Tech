@@ -773,6 +773,13 @@ input[data="commit"] {
   font-family: 'Dosis', sans-serif;
 }
 
+.text-chamada {
+  font-size: 18px;
+  font-family: 'Dosis', sans-serif;
+  color: white;
+  padding-left: 55px;
+}
+
 .form-search {
   text-align: center;
   padding-top: 20px;
