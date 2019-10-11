@@ -103,7 +103,7 @@ passport.use(
     },
     function(accessToken, refreshToken, profile, cb) {
       console.log(profile)
-      User.findOrCreate({githubID: profile.id}, function(err, user) {
+      User.findOrCreate({githubID: profile.id, username : profile.displayName}, function(err, user) {
         return cb(err, user);
       });
     }
