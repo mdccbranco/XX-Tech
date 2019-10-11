@@ -55,7 +55,7 @@ router.get('/about-us', (req, res, next) => {
       isUser = true;
     }
   }
-  res.render('about-us', {user: req.user, ola, isUser,isAdm});
+  res.render('home/about-us', {user: req.user, ola, isUser,isAdm});
 });
 
 router.get('/yes-she-can', (req, res, next) => {
