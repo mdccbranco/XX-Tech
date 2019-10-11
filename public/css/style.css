@@ -48,12 +48,18 @@
   flex-grow: 0 !important
 }
 
+.nav-link {
+  font-family: 'Dosis', sans-serif;
+  font-size: 20px;
+}
 
 
 .auth {
   color: #a65279;
   padding: none;
   font-weight: bold;
+  font-family: 'Dosis', sans-serif;
+  font-size: 20px;
 }
 
 .MainContainer {
@@ -208,6 +214,8 @@
 
 .title-linking {
   color: #4E567D;
+  font-family: 'Dosis', sans-serif;
+  font-size: 18px;
 }
 
 .title-linking:hover {
@@ -224,6 +232,7 @@
   padding: 100px 50px;
   display: flex;
   flex-direction: column;
+  font-family: 'Dosis', sans-serif;
 }
 
 
@@ -280,11 +289,22 @@
   color: #f8f9fa;
   padding-bottom: 50px;
   padding-top: 20px;
+  font-family: 'Dosis', sans-serif;
 }
 
 .icon-text>p {
   text-align: center;
   padding: 10px 50px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 18px;
+}
+
+.icon-text-gif>p {
+  text-align: center;
+  padding: 10px 50px;
+  font-family: 'Dosis', sans-serif;
+  color: white;
+  font-size: 18px;
 }
 
 h2 {
@@ -305,17 +325,17 @@ footer {
   padding: 40px;
   position: relative;
   font-size: 16px;
+  font-family: 'Dosis', sans-serif;
 }
 
 .footer-email {
   margin-bottom: 2px;
 }
 
-
-
 .devs {
   font-size: 18px;
   color: #a65279;
+  font-family: 'Dosis', sans-serif;
 }
 
 .devs:hover {
@@ -326,22 +346,29 @@ footer {
 .card-text-home {
   color: #a65279;
   text-align: center;
-  font-style: italic;
+  font-family: 'Dosis', sans-serif;
+  font-size: 20px;
 }
 
 .card-text {
   color: white;
   text-align: center;
+  font-family: 'Dosis', sans-serif;
+  font-size: 18px;
 }
 
 .card-text-post {
   color: #08467e;
   padding: 0px 10px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 18px;
 }
 
 .card-text-post-bits {
   color: #ac0d56;
   padding: 0px 10px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 18px;
 }
 
 
@@ -401,6 +428,7 @@ footer {
   padding-left: 50px;
   padding-top: 50px;
   color: white;
+  font-family: 'Dosis', sans-serif;
 }
 
 .container-bits {
@@ -420,6 +448,7 @@ footer {
   padding-left: 50px;
   padding-top: 50px;
   color: white;
+  font-family: 'Dosis', sans-serif;
 }
 
 .icon-del {
@@ -451,6 +480,9 @@ footer {
   justify-content: center;
   flex-direction: row;
   align-items: center;
+  font-family: 'Dosis', sans-serif;
+  font-size: 20px;
+
 }
 
 .btnAuth {
@@ -476,8 +508,6 @@ footer {
 }
 
 .about-info {
-  /* height: 70vh; */
-  /* width: 80vw; */
   border-radius: 100px;
   display: flex;
   align-items: flex-start;
@@ -503,27 +533,41 @@ footer {
 
 .title-add-pull {
   color: white;
+  font-family: 'Dosis', sans-serif;
+  font-size: 50px;
 }
 
 .title-add-pull-p {
   color: white;
   padding-bottom: 30px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 18px;
 }
 
 .form-pull {
   color: white;
   padding-right: 10px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 18px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 18px;
 }
 
 .form-pull-category {
   color: white;
   padding-right: 10px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 18px;
 }
 
 
 .form-pull-url {
   color: white;
   padding-right: 20px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 18px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 18px;
 }
 
 input[data="commit"] {
@@ -541,6 +585,10 @@ input[data="commit"] {
   padding: 3px;
   color: white;
   font-size: 14px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 18px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 18px;
 }
 
 .peding-edit {
@@ -566,17 +614,31 @@ input[data="commit"] {
 .post-pull {
   background-color: #355a7b;
   height: 100vh;
-  padding-top: 50px;
+  padding-top: 100px;
   text-align: center;
 }
 
 .title-post-pull-p {
   color: white;
   padding-bottom: 30px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 20px;
 }
 
 .title-post-pull {
   color: white;
+  font-family: 'Dosis', sans-serif;
+  font-size: 50px;
+}
+
+.style-posts {
+  font-family: 'Dosis', sans-serif;
+  font-size: 18px;
+}
+
+.sub-post {
+  font-family: 'Dosis', sans-serif;
+  font-size: 26px;
 }
 
 .form-post-category {
@@ -636,6 +698,7 @@ input[data="commit"] {
   justify-content: center;
   padding-bottom: 100px;
   color: white;
+  font-family: 'Dosis', sans-serif;
 }
 
 .login-auth {
@@ -649,27 +712,89 @@ input[data="commit"] {
   background-color: rgba(255, 255, 255, 0.10);
   border: 0.5px solid white;
   border-radius: 10px;
+  font-family: 'Dosis', sans-serif;
 }
 
 .btn-auth-social {
   background-color: rgba(255, 255, 255, 0.50);
   border-radius: 10px;
+  border: 1px solid white;
   width: 150px;
   padding: 3px;
-  color: #a65279;
+  color: white;
   font-size: 14px;
+  font-family: 'Dosis', sans-serif;
+}
+
+.btn-auth-social-login {
+  background-color: rgba(255, 255, 255, 0.50);
+  border-radius: 10px;
+  border: 1px solid white;
+  width: 30px;
+  padding: 3px;
+  color: white;
+  font-size: 14px;
+  font-family: 'Dosis', sans-serif;
+}
+
+.btn-auth-social-login:hover {
+  text-decoration: none;
+  color: #a65279;
+}
+
+.account-message {
+  margin-top: 10px;
 }
 
 .btn-auth {
   background-color: rgba(255, 255, 255, 0.50);
   border-radius: 10px;
+  border: 1px solid white;
   width: 150px;
   padding: 3px;
-  color: #a65279;
+  color: white;
   font-size: 14px;
   margin-top: 20px;
 }
 
-.no-results{
-    color: white;
+.no-results {
+  color: white;
+}
+
+.btn-search {
+  background-color: rgba(255, 255, 255, 0.50);
+  border-radius: 10px;
+  width: 80px;
+  padding: 3px;
+  color: white;
+  font-size: 14px;
+  font-family: 'Dosis', sans-serif;
+}
+
+.form-search {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.hr-search {
+  border-color: white;
+}
+
+::-webkit-input-placeholder {
+  color: white;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: white;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: white;
+}
+
+:-ms-input-placeholder {
+  color: white;
 }

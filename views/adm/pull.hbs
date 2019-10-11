@@ -1,7 +1,7 @@
 {{!-- <a href="/profile"> <button>My profile</button></a> --}}
 <div class='add-pull'>
   <h3 class="title-add-pull">Commit</h3>
-  <p class="title-add-pull">(Adicione um novo commit)</p>
+  <p class="title-post-pull-p">(Adicione um novo commit)</p>
   <form action="/adm/commit" method="post">
     <div class="form-pull-category">
       <input name='owner' value='{{user._id}}' type='hidden'>
@@ -45,7 +45,7 @@
   {{#unless this.post}}
   <div class='peding-edit'>
     <div class="peding-datas">
-      <p> • {{this.owner.username}} | {{this.url}} | {{this.description}} | {{this.category}} </p>
+      <p class="style-posts"> • {{this.owner.username}} | {{this.url}} | {{this.description}} | {{this.category}} </p>
     </div>
     <form action="/adm/{{this.id}}/delete" method="post">
       <button class="peding-edit-del" type="submit"><img class='pendig-icon-del' src="/images/delete-button.png"

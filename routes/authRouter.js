@@ -12,12 +12,7 @@ authRoutes.get('/signup', (req, res, next) => {
 });
 
 authRoutes.post('/signup', (req, res, next) => {
-  const {
-    username,
-    password,
-    role,
-    email
-  } = req.body;
+  const {username, password, role, email} = req.body;
 
   if (username === '' || password === '') {
     res.render('auth/signup', {
@@ -27,8 +22,8 @@ authRoutes.post('/signup', (req, res, next) => {
   }
 
   User.findOne({
-      username
-    })
+    username
+  })
     .then(user => {
       if (user !== null) {
         res.render('auth/signup', {
@@ -61,9 +56,10 @@ authRoutes.post('/signup', (req, res, next) => {
               pass: process.env.EMAIL_SECRET
             }
           });
-          transporter.sendMail({
-              from: "XX-TECH <contato.xxtech@gmail.com>",
-              //to: 'monicadamasceno@gmail.com', 
+          transporter
+            .sendMail({
+              from: 'XX-TECH <contato.xxtech@gmail.com>',
+              //to: 'monicadamasceno@gmail.com',
               to: newUser.email,
               subject: 'Seja bem vindo ao XX-Tech',
               // text: 'message',
@@ -81,7 +77,8 @@ authRoutes.post('/signup', (req, res, next) => {
 
 authRoutes.get('/login', (req, res, next) => {
   res.render('auth/login', {
-    message: 'error', user: req.user
+    message: 'error',
+    user: req.user
   });
 });
 
@@ -101,7 +98,7 @@ authRoutes.get('/auth/github', passport.authenticate('github'));
 authRoutes.get(
   '/auth/github/callback',
   passport.authenticate('github', {
-    successRedirect: '/profile',
+    successRedirect: '/',
     failureRedirect: '/login'
   })
 );
