@@ -34,7 +34,7 @@ router.get('/', (req, res, next) => {
   }
   Commit.find({post: true, category: 'yes'})
   .sort({createdAt: -1})
-  .limit(4)
+  .limit(3)
   .then( yes => {
     res.render('index', { user: req.user, isAdm, isUser, ola, yes})
     // Commit.find({post:true, category: 'bits'})
