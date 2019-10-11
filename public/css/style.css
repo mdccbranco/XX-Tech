@@ -401,6 +401,7 @@ footer {
 .card-ysc {
   border: 1px solid white;
   border-radius: 10px;
+  box-shadow: 0px 5px 5px 0px;
   margin: 2%;
   background-color: rgba(255, 255, 255, 0.20);
   display: flex;
@@ -595,6 +596,7 @@ input[data="commit"] {
   display: flex;
   justify-content: center;
   color: white;
+  padding: 5px 100px;
 }
 
 .peding-edit-del {
@@ -769,6 +771,13 @@ input[data="commit"] {
   color: white;
   font-size: 14px;
   font-family: 'Dosis', sans-serif;
+}
+
+.text-chamada {
+  font-size: 18px;
+  font-family: 'Dosis', sans-serif;
+  color: white;
+  padding-left: 55px;
 }
 
 .form-search {
